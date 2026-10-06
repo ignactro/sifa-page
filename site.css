@@ -40,6 +40,13 @@ a:hover {
   color: white;
 }
 
+.about a,
+.item-description a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .layout {
   min-height: 100vh;
   display: grid;
@@ -159,15 +166,15 @@ h2 {
 
 .about {
   max-width: 900px;
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Menlo,
-    Monaco,
-    Consolas,
-    monospace;
-  font-size: 20px;
-  line-height: 1.7;
+//  font-family:
+//    ui-monospace,
+//    SFMono-Regular,
+//    Menlo,
+//    Monaco,
+//    Consolas,
+//    monospace;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .items {
