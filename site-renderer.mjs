@@ -89,11 +89,29 @@ function sidebar(profile, current = '') {
           ${escapeHtml(profile.displayName ?? '')}
         </a>
 
-        ${
-          profile.headline
-            ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
-            : ''
-        }
+      ${
+  profile.headline
+    ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
+    : ''
+}
+
+      <div class="profile-links">
+        <a
+          href="https://scholar.google.com/citations?user=WXj6ZtcAAAAJ&hl=en&authuser=1&oi=ao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Scholar
+        </a>
+      
+        <a
+          href="https://orcid.org/0000-0002-7739-6184"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ORCID
+        </a>
+      
       </div>
 
       <nav class="nav">
