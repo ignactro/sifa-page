@@ -57,7 +57,7 @@ function formatDate(value) {
 }
 
 function liveHiring(profile) {
-  return sorted(profile.hiring).filter(
+  return sorted(profile.hiring ?? []).filter(
     (item) => item.status === 'live'
   );
 }
@@ -99,19 +99,25 @@ function sidebar(profile, current = '') {
       <nav class="nav">
         ${
           hasNews
-            ? `<a href="/news.html" ${current === 'news' ? 'aria-current="page"' : ''}>News</a>`
+            ? `<a href="/news.html" ${
+                current === 'news' ? 'aria-current="page"' : ''
+              }>News</a>`
             : ''
         }
 
         ${
           hasPublications
-            ? `<a href="/publications.html" ${current === 'publications' ? 'aria-current="page"' : ''}>Publications</a>`
+            ? `<a href="/publications.html" ${
+                current === 'publications' ? 'aria-current="page"' : ''
+              }>Publications</a>`
             : ''
         }
 
         ${
           hasFunding
-            ? `<a href="/funding.html" ${current === 'funding' ? 'aria-current="page"' : ''}>Funding</a>`
+            ? `<a href="/funding.html" ${
+                current === 'funding' ? 'aria-current="page"' : ''
+              }>Funding</a>`
             : ''
         }
 
@@ -197,6 +203,7 @@ function publicationItem(item) {
   return `
     <article class="item publication-item">
       <div class="item-main">
+
         <div class="publication-title">
           ${
             url
@@ -222,6 +229,7 @@ function publicationItem(item) {
                </div>`
             : ''
         }
+
       </div>
     </article>
   `;
@@ -235,6 +243,7 @@ function fundingItem(item) {
   return `
     <article class="item funding-item">
       <div class="item-main">
+
         <div class="funding-title">
           ${
             url
@@ -260,6 +269,7 @@ function fundingItem(item) {
             ? `<div class="item-description">${description}</div>`
             : ''
         }
+
       </div>
     </article>
   `;
@@ -272,6 +282,7 @@ function hiringItem(item) {
   return `
     <article class="item hiring-item">
       <div class="item-main">
+
         <div class="hiring-title">
           ${
             url
@@ -285,6 +296,7 @@ function hiringItem(item) {
             ? `<div class="item-description">${item.text}</div>`
             : ''
         }
+
       </div>
     </article>
   `;
@@ -325,9 +337,9 @@ function section({
 }
 
 export function renderHome(profile) {
-  const news = sorted(profile.news).slice(0, 1);
-  const publications = sorted(profile.publications).slice(0, 10);
-  const funding = sorted(profile.funding).slice(0, 5);
+  const news = sorted(profile.news ?? []).slice(0, 1);
+  const publications = sorted(profile.publications ?? []).slice(0, 10);
+  const funding = sorted(profile.funding ?? []).slice(0, 5);
   const hiring = liveHiring(profile);
 
   const body = `
@@ -377,7 +389,7 @@ export function renderHome(profile) {
 }
 
 export function renderNewsPage(profile) {
-  const items = sorted(profile.news);
+  const items = sorted(profile.news ?? []);
 
   return document(
     profile,
@@ -398,7 +410,7 @@ export function renderNewsPage(profile) {
 }
 
 export function renderPublicationsPage(profile) {
-  const items = sorted(profile.publications);
+  const items = sorted(profile.publications ?? []);
 
   return document(
     profile,
@@ -419,7 +431,7 @@ export function renderPublicationsPage(profile) {
 }
 
 export function renderFundingPage(profile) {
-  const items = sorted(profile.funding);
+  const items = sorted(profile.funding ?? []);
 
   return document(
     profile,
