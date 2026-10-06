@@ -127,6 +127,16 @@ function sidebar(profile, current = '') {
             : ''
         }
       </nav>
+
+      <button
+        id="theme-toggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch colour theme"
+        title="Switch colour theme"
+      >
+        ◐
+      </button>
     </aside>
   `;
 }
@@ -155,6 +165,13 @@ function document(profile, body, current = '', title = '') {
     content="${escapeHtml(description)}"
   >
 
+  <script>
+    (() => {
+      const savedTheme = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = savedTheme || 'dark';
+    })();
+  </script>
+
   <link rel="stylesheet" href="/site.css">
 </head>
 
@@ -170,6 +187,23 @@ function document(profile, body, current = '', title = '') {
       </footer>
     </main>
   </div>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const current =
+          document.documentElement.dataset.theme || 'dark';
+
+        const next =
+          current === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('theme', next);
+      });
+    }
+  </script>
 </body>
 </html>`;
 }
@@ -348,6 +382,7 @@ export function renderHome(profile) {
         ${profile.about ?? ''}
       </div>
     </section>
+
     ${section({
       id: 'news',
       title: 'News',
