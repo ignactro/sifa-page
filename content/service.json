@@ -1,4 +1,10 @@
 [
+    {
+    "category": "Technical Programme Committees",
+    "title": "ACM SIGMETRICS",
+    "role": "Senior Program Committee",
+    "years": "2027"
+  },
   {
     "category": "Technical Programme Committees",
     "title": "AAAI ICWSM",
@@ -15,25 +21,25 @@
     "category": "Technical Programme Committees",
     "title": "ACM HotNets",
     "role": "Program Committee",
-    "years": "2025–2026"
+    "years": "2025–present"
   },
   {
     "category": "Technical Programme Committees",
     "title": "ACM Internet Measurement Conference (IMC)",
     "role": "Technical Program Committee",
-    "years": "2022–2026"
+    "years": "2022–present"
   },
   {
     "category": "Technical Programme Committees",
     "title": "ACM Web Conference",
     "role": "Program Committee",
-    "years": "2023–2026"
+    "years": "2023–present"
   },
   {
     "category": "Technical Programme Committees",
     "title": "AAAI ICWSM",
     "role": "Program Committee",
-    "years": "2023–2026"
+    "years": "2023–present"
   },
   {
     "category": "Technical Programme Committees",
@@ -45,7 +51,7 @@
     "category": "Technical Programme Committees",
     "title": "ACM/IRTF Applied Networking Research Workshop (ANRW)",
     "role": "Program Committee",
-    "years": "2025"
+    "years": "2025-present"
   },
   {
     "category": "Technical Programme Committees",
@@ -61,15 +67,27 @@
   },
   {
     "category": "Journals",
+    "title": "ACM/IEEE Transactions on Networking",
+    "role": "Reviewer",
+    "years": ""
+  },
+  {
+    "category": "Journals",
+    "title": "ACM/IEEE Transactions on Service Management",
+    "role": "Reviewer",
+    "years": ""
+  },
+  {
+    "category": "Journals",
     "title": "ACM SIGCOMM Computer Communication Review (CCR)",
     "role": "Reviewer",
-    "years": "2019"
+    "years": ""
   },
   {
     "category": "Journals",
     "title": "Computer Networks",
     "role": "Reviewer",
-    "years": "2015"
+    "years": ""
   },
   {
     "category": "Grant Reviewing",
@@ -80,13 +98,13 @@
   {
     "category": "External Examining",
     "title": "PhD examiner",
-    "role": "University of Oslo; IMDEA Networks; Universidad Carlos III de Madrid (2); Universidad Politécnica de Madrid",
+    "role": "University of Oslo (1); IMDEA Networks (1); Universidad Carlos III de Madrid (2); Universidad Politécnica de Madrid (1)",
     "years": ""
   },
   {
     "category": "External Examining",
-    "title": "MBA examiner",
-    "role": "Frankfurt School of Finance & Management",
+    "title": "Frankfurt School of Finance & Management",
+    "role": "MBA examiner",
     "years": ""
   }
 ]
