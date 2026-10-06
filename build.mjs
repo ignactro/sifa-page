@@ -38,18 +38,26 @@ async function main() {
     throw new Error(`No public Sifa profile found for "${SIFA_ID}".`);
   }
 
-  const localProfile = await readJson('./profile.json');
-  const news = await readJson('./content/news.json');
-  const publications = await readJson('./content/publications.json');
-  const funding = await readJson('./content/funding.json');
-  const positions = await readJson('./content/positions.json');
+  const [
+    localProfile,
+    news,
+    publications,
+    funding,
+    hiring,
+  ] = await Promise.all([
+    readJson('./profile.json'),
+    readJson('./content/news.json'),
+    readJson('./content/publications.json'),
+    readJson('./content/funding.json'),
+    readJson('./content/hiring.json'),
+  ]);
 
-  Object.assign(profile, localProfile);
-
-  profile.news = news;
-  profile.publications = publications;
-  profile.funding = funding;
-  profile.positions = positions;
+  Object.assign(profile, localProfile, {
+    news,
+    publications,
+    funding,
+    hiring,
+  });
 
   await rm(OUT, { recursive: true, force: true });
   await mkdir(OUT, { recursive: true });
@@ -61,25 +69,12 @@ async function main() {
     await readFile(new URL('./site.css', import.meta.url), 'utf8')
   );
 
-  await writeFile(
-    `${OUT}/index.html`,
-    renderHome(profile)
-  );
-
-  await writeFile(
-    `${OUT}/news.html`,
-    renderNewsPage(profile)
-  );
-
-  await writeFile(
-    `${OUT}/publications.html`,
-    renderPublicationsPage(profile)
-  );
-
-  await writeFile(
-    `${OUT}/funding.html`,
-    renderFundingPage(profile)
-  );
+  await Promise.all([
+    writeFile(`${OUT}/index.html`, renderHome(profile)),
+    writeFile(`${OUT}/news.html`, renderNewsPage(profile)),
+    writeFile(`${OUT}/publications.html`, renderPublicationsPage(profile)),
+    writeFile(`${OUT}/funding.html`, renderFundingPage(profile)),
+  ]);
 
   console.log('Done.');
 }
