@@ -337,35 +337,14 @@ function fundingItem(item) {
 }
 
 function serviceItem(item) {
-  const url = safeUrl(item.url);
   const title = escapeHtml(item.title ?? '');
+  const role = escapeHtml(item.role ?? '');
+  const years = escapeHtml(item.years ?? '');
 
   return `
-    <article class="item service-item">
-      <div class="item-main">
-
-        <div class="service-title">
-          ${
-            url
-              ? `<a href="${escapeHtml(url)}">${title}</a>`
-              : title
-          }
-        </div>
-
-        ${
-          item.role || item.years
-            ? `<div class="metadata">
-                 ${escapeHtml(
-                   [item.role, item.years]
-                     .filter(Boolean)
-                     .join(' · ')
-                 )}
-               </div>`
-            : ''
-        }
-
-      </div>
-    </article>
+    <p class="service-item">
+      <strong>${title}${title ? '.' : ''}</strong>${role ? ` ${role}` : ''}${years ? ` (${years})` : ''}
+    </p>
   `;
 }
 
@@ -554,10 +533,11 @@ export function renderFundingPage(profile) {
   );
 }
 export function renderServicePage(profile) {
-  const items = sorted(profile.service ?? []);
+  const items = profile.service ?? [];
   const categories = [
-    'Programme Committees',
-    'Reviewing',
+    'Technical Programme Committees',
+    'Journals',
+    'Grant Reviewing',
     'External Examining',
   ];
 
