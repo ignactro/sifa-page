@@ -66,6 +66,7 @@ function sidebar(profile, current = '') {
   const hasNews = (profile.news ?? []).length > 0;
   const hasPublications = (profile.publications ?? []).length > 0;
   const hasFunding = (profile.funding ?? []).length > 0;
+  const hasService = (profile.service ?? []).length > 0;
   const hasHiring = liveHiring(profile).length > 0;
 
   const avatar = safeUrl(profile.avatar);
@@ -136,6 +137,14 @@ function sidebar(profile, current = '') {
             ? `<a href="/funding.html" ${
                 current === 'funding' ? 'aria-current="page"' : ''
               }>Funding</a>`
+            : ''
+        }
+
+        ${
+          hasService
+            ? `<a href="/service.html" ${
+                current === 'service' ? 'aria-current="page"' : ''
+              }>Service</a>`
             : ''
         }
 
@@ -265,16 +274,20 @@ function publicationItem(item) {
         </div>
 
         ${
-          item.authors || item.venue || item.year
-            ? `<div class="authors">${escapeHtml(
-                [
-                  item.authors,
-                  item.venue ? `· ${item.venue}` : null,
-                  item.year ? `(${item.year})` : null,
-                ]
-                  .filter(Boolean)
-                  .join(' ')
-              )}</div>`
+          item.authors
+            ? `<div class="authors">${escapeHtml(item.authors)}</div>`
+            : ''
+        }
+
+        ${
+          item.venue || item.year
+            ? `<div class="metadata">
+                 ${escapeHtml(
+                   [item.venue, item.year]
+                     .filter(Boolean)
+                     .join(', ')
+                 )}
+               </div>`
             : ''
         }
 
@@ -320,6 +333,52 @@ function fundingItem(item) {
 
       </div>
     </article>
+  `;
+}
+
+function serviceItem(item) {
+  const url = safeUrl(item.url);
+  const title = escapeHtml(item.title ?? '');
+
+  return `
+    <article class="item service-item">
+      <div class="item-main">
+
+        <div class="service-title">
+          ${
+            url
+              ? `<a href="${escapeHtml(url)}">${title}</a>`
+              : title
+          }
+        </div>
+
+        ${
+          item.role || item.years
+            ? `<div class="metadata">
+                 ${escapeHtml(
+                   [item.role, item.years]
+                     .filter(Boolean)
+                     .join(' · ')
+                 )}
+               </div>`
+            : ''
+        }
+
+      </div>
+    </article>
+  `;
+}
+
+function serviceGroup(title, items) {
+  if (!items.length) return '';
+
+  return `
+    <div class="service-group">
+      <h2>${escapeHtml(title)}</h2>
+      <div class="items">
+        ${items.map(serviceItem).join('')}
+      </div>
+    </div>
   `;
 }
 
@@ -494,3 +553,36 @@ export function renderFundingPage(profile) {
     'Funding'
   );
 }
+export function renderServicePage(profile) {
+  const items = sorted(profile.service ?? []);
+  const categories = [
+    'Programme Committees',
+    'Reviewing',
+    'External Examining',
+  ];
+
+  const body = categories
+    .map((category) =>
+      serviceGroup(
+        category,
+        items.filter((item) => item.category === category)
+      )
+    )
+    .join('');
+
+  return document(
+    profile,
+    `
+      <section class="section listing-page service-page">
+        <header class="section-header">
+          <h1>Service</h1>
+        </header>
+
+        ${body}
+      </section>
+    `,
+    'service',
+    'Service'
+  );
+}
+
