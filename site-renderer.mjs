@@ -53,7 +53,6 @@ function formatDate(value) {
   return date.toLocaleDateString('en-GB', {
     year: 'numeric',
     month: 'short',
-    day: 'numeric',
   });
 }
 
@@ -65,7 +64,6 @@ function liveHiring(profile) {
 
 function sidebar(profile, current = '') {
   const hasNews = (profile.news ?? []).length > 0;
-  const hasBlog = (profile.blog ?? []).length > 0;
   const hasPublications = (profile.publications ?? []).length > 0;
   const hasFunding = (profile.funding ?? []).length > 0;
   const hasService = (profile.service ?? []).length > 0;
@@ -92,25 +90,29 @@ function sidebar(profile, current = '') {
           ${escapeHtml(profile.displayName ?? '')}
         </a>
 
-        ${
-          profile.headline
-            ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
-            : ''
-        }
+      ${
+  profile.headline
+    ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
+    : ''
+}
 
-        <div class="profile-links">
-          <a
-            href="https://scholar.google.com/citations?user=WXj6ZtcAAAAJ&hl=en&authuser=1&oi=ao"
-            target="_blank"
-            rel="noopener noreferrer"
-          >Google Scholar</a>
-
-          <a
-            href="https://orcid.org/0000-0002-7739-6184"
-            target="_blank"
-            rel="noopener noreferrer"
-          >ORCID</a>
-        </div>
+      <div class="profile-links">
+        <a
+          href="https://scholar.google.com/citations?user=WXj6ZtcAAAAJ&hl=en&authuser=1&oi=ao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Scholar
+        </a>
+      
+        <a
+          href="https://orcid.org/0000-0002-7739-6184"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ORCID
+        </a>
+      
       </div>
 
       <nav class="nav">
@@ -119,14 +121,6 @@ function sidebar(profile, current = '') {
             ? `<a href="/news.html" ${
                 current === 'news' ? 'aria-current="page"' : ''
               }>News</a>`
-            : ''
-        }
-
-        ${
-          hasBlog
-            ? `<a href="/blog.html" ${
-                current === 'blog' ? 'aria-current="page"' : ''
-              }>Blog</a>`
             : ''
         }
 
@@ -167,7 +161,9 @@ function sidebar(profile, current = '') {
         type="button"
         aria-label="Switch colour theme"
         title="Switch colour theme"
-      >◐</button>
+      >
+        ◐
+      </button>
     </aside>
   `;
 }
@@ -241,50 +237,28 @@ function document(profile, body, current = '', title = '') {
 
 function newsItem(item) {
   const url = safeUrl(item.url);
-  const title = item.title ?? '';
-  const text = item.text ?? '';
 
-  if (title) {
-    return `
-      <article class="item news-list-item">
-        ${item.date ? `<div class="item-date">${formatDate(item.date)}</div>` : ''}
-        <div class="item-main">
-          <div class="news-title">
-            ${url ? `<a href="${escapeHtml(url)}">${escapeHtml(title)}</a>` : escapeHtml(title)}
-          </div>
-          ${text ? `<div class="item-description">${escapeHtml(text)}</div>` : ''}
-        </div>
-      </article>
-    `;
-  }
+  // `html` is trusted local content used when a news item needs inline links.
+  // Plain `text` continues to be escaped as before.
+  const body = item.html ?? escapeHtml(item.text ?? '');
 
-  const content = url
-    ? `<a href="${escapeHtml(url)}">${escapeHtml(text)}</a>`
-    : escapeHtml(text);
+  const content = url && !item.html
+    ? `<a href="${escapeHtml(url)}">${body}</a>`
+    : body;
 
   return `
-    <article class="item news-list-item">
-      ${item.date ? `<div class="item-date">${formatDate(item.date)}</div>` : ''}
-      <div class="item-main">${content}</div>
+    <article class="item news-item">
+      ${
+        item.date
+          ? `<div class="item-date">${formatDate(item.date)}</div>`
+          : ''
+      }
+
+      <div class="item-main">
+        ${content}
+      </div>
     </article>
   `;
-}
-
-function newsCard(item) {
-  const url = safeUrl(item.url);
-  const title = item.title ?? item.text ?? '';
-  const text = item.title ? (item.text ?? '') : '';
-
-  const inner = `
-    ${item.date ? `<div class="card-date">${formatDate(item.date)}</div>` : ''}
-    <div class="card-title">${escapeHtml(title)}</div>
-    ${text ? `<div class="card-summary">${escapeHtml(text)}</div>` : ''}
-    ${url ? `<div class="card-more">Read →</div>` : ''}
-  `;
-
-  return url
-    ? `<a class="compact-card news-card" href="${escapeHtml(url)}">${inner}</a>`
-    : `<article class="compact-card news-card">${inner}</article>`;
 }
 
 function publicationItem(item) {
@@ -294,19 +268,33 @@ function publicationItem(item) {
   return `
     <article class="item publication-item">
       <div class="item-main">
+
         <div class="publication-title">
-          ${url ? `<a href="${escapeHtml(url)}">${title}</a>` : title}
+          ${
+            url
+              ? `<a href="${escapeHtml(url)}">${title}</a>`
+              : title
+          }
         </div>
 
-        ${item.authors ? `<div class="authors">${escapeHtml(item.authors)}</div>` : ''}
+        ${
+          item.authors
+            ? `<div class="authors">${escapeHtml(item.authors)}</div>`
+            : ''
+        }
 
         ${
           item.venue || item.year
-            ? `<div class="metadata">${escapeHtml(
-                [item.venue, item.year].filter(Boolean).join(', ')
-              )}</div>`
+            ? `<div class="metadata">
+                 ${escapeHtml(
+                   [item.venue, item.year]
+                     .filter(Boolean)
+                     .join(', ')
+                 )}
+               </div>`
             : ''
         }
+
       </div>
     </article>
   `;
@@ -320,19 +308,33 @@ function fundingItem(item) {
   return `
     <article class="item funding-item">
       <div class="item-main">
+
         <div class="funding-title">
-          ${url ? `<a href="${escapeHtml(url)}">${title}</a>` : title}
+          ${
+            url
+              ? `<a href="${escapeHtml(url)}">${title}</a>`
+              : title
+          }
         </div>
 
         ${
           item.funder || item.years
-            ? `<div class="metadata">${escapeHtml(
-                [item.funder, item.years].filter(Boolean).join(' · ')
-              )}</div>`
+            ? `<div class="metadata">
+                 ${escapeHtml(
+                   [item.funder, item.years]
+                     .filter(Boolean)
+                     .join(' · ')
+                 )}
+               </div>`
             : ''
         }
 
-        ${description ? `<div class="item-description">${description}</div>` : ''}
+        ${
+          description
+            ? `<div class="item-description">${description}</div>`
+            : ''
+        }
+
       </div>
     </article>
   `;
@@ -370,190 +372,51 @@ function hiringItem(item) {
   return `
     <article class="item hiring-item">
       <div class="item-main">
+
         <div class="hiring-title">
-          ${url ? `<a href="${escapeHtml(url)}">${title}</a>` : title}
+          ${
+            url
+              ? `<a href="${escapeHtml(url)}">${title}</a>`
+              : title
+          }
         </div>
 
-        ${item.text ? `<div class="item-description">${item.text}</div>` : ''}
+        ${
+          item.text
+            ? `<div class="item-description">${item.text}</div>`
+            : ''
+        }
+
       </div>
     </article>
   `;
 }
 
-function inlineMarkdown(value = '') {
-  const tokens = [];
-
-  const stash = (html) => {
-    const index = tokens.push(html) - 1;
-    return `@@MDTOKEN${index}@@`;
-  };
-
-  let source = String(value);
-
-  source = source.replace(/`([^`]+)`/g, (_, code) =>
-    stash(`<code>${escapeHtml(code)}</code>`)
-  );
-
-  source = source.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
-    const url = safeUrl(href.trim());
-    if (!url) return label;
-    return stash(`<a href="${escapeHtml(url)}">${escapeHtml(label)}</a>`);
-  });
-
-  let html = escapeHtml(source);
-  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g, '$1<em>$2</em>');
-
-  html = html.replace(/@@MDTOKEN(\d+)@@/g, (_, index) => tokens[Number(index)] ?? '');
-
-  return html;
-}
-
-function markdownToHtml(markdown = '') {
-  const lines = String(markdown).replace(/\r\n/g, '\n').split('\n');
-  const out = [];
-  let paragraph = [];
-  let inCode = false;
-  let codeLines = [];
-
-  const flushParagraph = () => {
-    if (!paragraph.length) return;
-    out.push(`<p>${inlineMarkdown(paragraph.join(' '))}</p>`);
-    paragraph = [];
-  };
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-
-    if (line.startsWith('```')) {
-      flushParagraph();
-
-      if (inCode) {
-        out.push(`<pre><code>${escapeHtml(codeLines.join('\n'))}</code></pre>`);
-        codeLines = [];
-        inCode = false;
-      } else {
-        inCode = true;
-      }
-      continue;
-    }
-
-    if (inCode) {
-      codeLines.push(line);
-      continue;
-    }
-
-    if (!line.trim()) {
-      flushParagraph();
-      continue;
-    }
-
-    const heading = line.match(/^(#{1,4})\s+(.+)$/);
-    if (heading) {
-      flushParagraph();
-      const level = heading[1].length;
-      out.push(`<h${level}>${inlineMarkdown(heading[2])}</h${level}>`);
-      continue;
-    }
-
-    if (/^>\s?/.test(line)) {
-      flushParagraph();
-      const quote = [];
-      let j = i;
-      while (j < lines.length && /^>\s?/.test(lines[j])) {
-        quote.push(lines[j].replace(/^>\s?/, ''));
-        j++;
-      }
-      out.push(`<blockquote><p>${inlineMarkdown(quote.join(' '))}</p></blockquote>`);
-      i = j - 1;
-      continue;
-    }
-
-    if (/^[-*]\s+/.test(line)) {
-      flushParagraph();
-      const items = [];
-      let j = i;
-      while (j < lines.length && /^[-*]\s+/.test(lines[j])) {
-        items.push(lines[j].replace(/^[-*]\s+/, ''));
-        j++;
-      }
-      out.push(`<ul>${items.map((item) => `<li>${inlineMarkdown(item)}</li>`).join('')}</ul>`);
-      i = j - 1;
-      continue;
-    }
-
-    if (/^\d+\.\s+/.test(line)) {
-      flushParagraph();
-      const items = [];
-      let j = i;
-      while (j < lines.length && /^\d+\.\s+/.test(lines[j])) {
-        items.push(lines[j].replace(/^\d+\.\s+/, ''));
-        j++;
-      }
-      out.push(`<ol>${items.map((item) => `<li>${inlineMarkdown(item)}</li>`).join('')}</ol>`);
-      i = j - 1;
-      continue;
-    }
-
-    if (/^---+$/.test(line.trim())) {
-      flushParagraph();
-      out.push('<hr>');
-      continue;
-    }
-
-    paragraph.push(line.trim());
-  }
-
-  flushParagraph();
-
-  if (inCode && codeLines.length) {
-    out.push(`<pre><code>${escapeHtml(codeLines.join('\n'))}</code></pre>`);
-  }
-
-  return out.join('\n');
-}
-
-function blogCard(post) {
-  const url = `/blog/${encodeURIComponent(post.slug)}.html`;
-
-  return `
-    <a class="compact-card blog-card" href="${url}">
-      ${post.date ? `<div class="card-date">${formatDate(post.date)}</div>` : ''}
-      <div class="card-title">${escapeHtml(post.title ?? '')}</div>
-      ${post.summary ? `<div class="card-summary">${escapeHtml(post.summary)}</div>` : ''}
-      <div class="card-more">Read →</div>
-    </a>
-  `;
-}
-
-function cardSection({ id, title, items, renderer, allUrl }) {
-  if (!items.length) return '';
-
-  return `
-    <section class="section" ${id ? `id="${id}"` : ''}>
-      <header class="section-header">
-        <h2><a href="${allUrl}">${escapeHtml(title)}</a></h2>
-        <a class="view-all" href="${allUrl}">All →</a>
-      </header>
-
-      <div class="compact-grid">
-        ${items.map(renderer).join('')}
-      </div>
-    </section>
-  `;
-}
-
-function section({ id, title, items, renderer, allUrl }) {
+function section({
+  id,
+  title,
+  items,
+  renderer,
+  allUrl,
+}) {
   if (!items.length) return '';
 
   return `
     <section class="section" ${id ? `id="${id}"` : ''}>
       <header class="section-header">
         <h2>
-          ${allUrl ? `<a href="${allUrl}">${escapeHtml(title)}</a>` : escapeHtml(title)}
+          ${
+            allUrl
+              ? `<a href="${allUrl}">${escapeHtml(title)}</a>`
+              : escapeHtml(title)
+          }
         </h2>
 
-        ${allUrl ? `<a class="view-all" href="${allUrl}">All →</a>` : ''}
+        ${
+          allUrl
+            ? `<a class="view-all" href="${allUrl}">All →</a>`
+            : ''
+        }
       </header>
 
       <div class="items">
@@ -564,8 +427,7 @@ function section({ id, title, items, renderer, allUrl }) {
 }
 
 export function renderHome(profile) {
-  const news = sorted(profile.news ?? []).slice(0, 3);
-  const blog = sorted(profile.blog ?? []).slice(0, 3);
+  const news = sorted(profile.news ?? []).slice(0, 1);
   const publications = sorted(profile.publications ?? []).slice(0, 10);
   const funding = sorted(profile.funding ?? []).slice(0, 5);
   const hiring = liveHiring(profile);
@@ -577,20 +439,12 @@ export function renderHome(profile) {
       </div>
     </section>
 
-    ${cardSection({
+    ${section({
       id: 'news',
       title: 'News',
       items: news,
-      renderer: newsCard,
+      renderer: newsItem,
       allUrl: '/news.html',
-    })}
-
-    ${cardSection({
-      id: 'blog',
-      title: 'Blog',
-      items: blog,
-      renderer: blogCard,
-      allUrl: '/blog.html',
     })}
 
     ${section({
@@ -638,51 +492,6 @@ export function renderNewsPage(profile) {
     `,
     'news',
     'News'
-  );
-}
-
-export function renderBlogPage(profile) {
-  const items = sorted(profile.blog ?? []);
-
-  return document(
-    profile,
-    `
-      <section class="section listing-page blog-index">
-        <header class="section-header">
-          <h1>Blog</h1>
-        </header>
-
-        ${
-          items.length
-            ? `<div class="blog-list">${items.map(blogCard).join('')}</div>`
-            : '<p class="empty-state">No posts yet.</p>'
-        }
-      </section>
-    `,
-    'blog',
-    'Blog'
-  );
-}
-
-export function renderBlogPost(profile, post) {
-  return document(
-    profile,
-    `
-      <article class="section blog-post">
-        <div class="blog-post-header">
-          <a class="back-link" href="/blog.html">← Blog</a>
-          <h1>${escapeHtml(post.title ?? '')}</h1>
-          ${post.date ? `<div class="blog-post-date">${formatDate(post.date)}</div>` : ''}
-          ${post.summary ? `<p class="blog-post-summary">${escapeHtml(post.summary)}</p>` : ''}
-        </div>
-
-        <div class="blog-content">
-          ${markdownToHtml(post.markdown ?? '')}
-        </div>
-      </article>
-    `,
-    'blog',
-    post.title ?? 'Blog'
   );
 }
 
