@@ -334,7 +334,7 @@ export function renderHome(profile) {
       </header>
 
       <div class="about">
-        ${escapeHtml(profile.about ?? '')}
+        ${profile.about ?? ''}
       </div>
     </section>
 
