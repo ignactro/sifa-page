@@ -13,7 +13,7 @@
  *     section model -- no `.md` re-parse.
  */
 
-import { mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { cpSync } from 'node:fs';
 import { fetchProfile } from '@singi-labs/sifa-sdk/query/fetchers';
 import {
@@ -77,6 +77,10 @@ async function main() {
   if (!profile) {
     throw new Error(`No public profile for "${SIFA_ID}" (404 on the SDK profile).`);
   }
+  const localProfile = JSON.parse(
+    await readFile(new URL('./profile.json', import.meta.url), 'utf8')
+  );
+  Object.assign(profile, localProfile);
   const handle = profile.handle ?? (SIFA_ID.startsWith('did:') ? null : SIFA_ID);
   // Without a resolvable handle there is no profile URL to point at, so the
   // build stays on the bare footer context rather than emitting a broken
