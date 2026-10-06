@@ -3,7 +3,7 @@ const SITE_URL = 'https://ignacio-castro.uk';
 function escapeHtml(value = '') {
   return String(value)
     .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
+    .replaceAll('<', '&lt;')f
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
@@ -344,15 +344,10 @@ export function renderHome(profile) {
 
   const body = `
     <section class="section about-section">
-      <header class="section-header">
-        <h1>About</h1>
-      </header>
-
       <div class="about">
         ${profile.about ?? ''}
       </div>
     </section>
-
     ${section({
       id: 'news',
       title: 'News',
