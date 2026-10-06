@@ -91,10 +91,10 @@ function sidebar(profile, current = '') {
         </a>
 
       ${
-  profile.headline
-    ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
-    : ''
-}
+        profile.headline
+          ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
+          : ''
+      }
 
       <div class="profile-links">
         <a
@@ -104,7 +104,7 @@ function sidebar(profile, current = '') {
         >
           Google Scholar
         </a>
-      
+
         <a
           href="https://orcid.org/0000-0002-7739-6184"
           target="_blank"
@@ -112,7 +112,6 @@ function sidebar(profile, current = '') {
         >
           ORCID
         </a>
-      
       </div>
 
       <nav class="nav">
@@ -269,6 +268,20 @@ function publicationItem(item) {
   const url = safeUrl(item.url);
   const title = escapeHtml(item.title ?? '');
 
+  const authorsAndVenue = [
+    item.authors,
+    item.venue,
+  ]
+    .filter(Boolean)
+    .join(' · ');
+
+  const details = [
+    authorsAndVenue,
+    item.year ? `(${item.year})` : null,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return `
     <article class="item publication-item">
       <div class="item-main">
@@ -282,20 +295,8 @@ function publicationItem(item) {
         </div>
 
         ${
-          item.authors
-            ? `<div class="authors">${escapeHtml(item.authors)}</div>`
-            : ''
-        }
-
-        ${
-          item.venue || item.year
-            ? `<div class="metadata">
-                 ${escapeHtml(
-                   [item.venue, item.year]
-                     .filter(Boolean)
-                     .join(', ')
-                 )}
-               </div>`
+          details
+            ? `<div class="authors">${escapeHtml(details)}</div>`
             : ''
         }
 
