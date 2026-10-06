@@ -3,7 +3,7 @@ const SITE_URL = 'https://ignacio-castro.uk';
 function escapeHtml(value = '') {
   return String(value)
     .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')f
+    .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
