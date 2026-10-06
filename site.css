@@ -98,6 +98,24 @@ a:hover {
   line-height: 1.5;
 }
 
+.profile-links {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.profile-links a {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.profile-links a:hover {
+  color: var(--text);
+}
+
 .nav {
   border-top: 1px solid var(--rule);
   padding-top: 16px;
