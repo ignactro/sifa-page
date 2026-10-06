@@ -94,3 +94,428 @@
     "url": "https://qmro.qmul.ac.uk/handle/123456789/94550"
   },
   {
+    "date": "2024-01-01",
+    "title": "Making the Pick: Understanding Professional Editor Comment Curation in Online News",
+    "authors": "Yupeng He, Yimeng Gu, Ravi Shekhar, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/101013"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "IPFS in the Fast Lane: Accelerating Record Storage with Optimistic Provide",
+    "authors": "Dennis Trautwein, Yiluo Wei, Yiannis Psaras, Moritz Schubotz, Ignacio Castro, Bela Gipp, Gareth Tyson",
+    "venue": "IEEE INFOCOM 2024-IEEE Conference on Computer Communications",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/101014"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "The Eternal Tussle: Exploring the Role of Centralization in IPFS",
+    "authors": "Yiluo Wei, Dennis Trautwein, Yiannis Psaras, Ignacio Castro, Will Scott, Aravindh Raman, Gareth Tyson",
+    "venue": "21st USENIX Symposium on Networked Systems Design and Implementation (NSDI 24)",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/96227"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Decentralised moderation for interoperable social networks: A conversation-based approach for pleroma and the fediverse",
+    "authors": "Vibhor Agarwal, Aravindh Raman, Nishanth Sastry, Ahmed M Abdelmoniem, Gareth Tyson, Ignacio Castro",
+    "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/131718"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Detecting multimodal fake news with gated variational autoencoder",
+    "authors": "Yimeng Gu, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the 16th ACM Web Science Conference",
+    "year": "2024"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Learning domain-invariant features for out-of-context news detection",
+    "authors": "Yimeng Gu, Mengqi Zhang, Ignacio Castro, Shu Wu, Gareth Tyson",
+    "venue": "arXiv preprint arXiv:2406.07430",
+    "year": "2024",
+    "url": "https://arxiv.org/abs/2406.07430"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Guardians of the Galaxy: Content Moderation in the InterPlanetary File System",
+    "authors": "Saidu Sokoto, Leonhard Balduf, Dennis Trautwein, Yiluo Wei, Gareth Tyson, Ignacio Castro, Onur Ascigil, George Pavlou, Maciej Korczyński, Björn Scheuermann",
+    "venue": "33rd USENIX Security Symposium (USENIX Security 24)",
+    "year": "2024"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "How Similar Are Elected Politicians and Their Constituents? Quantitative Evidence From Online Social Networks",
+    "authors": "Waleed Iqbal, Gareth Tyson, Ignacio Castro",
+    "venue": "arXiv preprint arXiv:2407.03255",
+    "year": "2024",
+    "url": "https://arxiv.org/abs/2407.03255"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Looking AT the Blue Skies of Bluesky",
+    "authors": "Leonhard Balduf, Saidu Sokoto, Onur Ascigil, Gareth Tyson, Björn Scheuermann, Maciej Korczyński, Ignacio Castro, Michaŀ Król",
+    "venue": "Proceedings of the 2024 ACM on Internet Measurement Conference",
+    "year": "2024",
+    "url": "https://arxiv.org/abs/2408.12449"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Collecting and analyzing public data from Mastodon",
+    "authors": "Haris Bin Zia, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the 33rd ACM International Conference on Information and Knowledge Management",
+    "year": "2024"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Mastodoner: A Command-line Tool and Python Library for Public Data Collection from Mastodon",
+    "authors": "Haris Bin Zia, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the 33rd ACM International Conference on Information and Knowledge Management",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/103389"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Fediverse Migrations: A Study of User Account Portability on the Mastodon Social Network",
+    "authors": "Haris Bin Zia, Jiahui He, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the 2024 ACM on Internet Measurement Conference",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/104165"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Cost-Effective Attention Mechanisms for Low Resource Settings: Necessity & Sufficiency of Linear Transformations",
+    "authors": "Peyman Hosseini, Mehran Hosseini, Ignacio Castro, Matthew Purver",
+    "venue": "arXiv preprint arXiv:2403.01643",
+    "year": "2024",
+    "url": "https://arxiv.org/abs/2403.01643"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Will Admins Cope? Decentralized Moderation in the Fediverse",
+    "authors": "Ishaku Hassan Anaobi, Aravindh Raman, Ignacio Castro, Haris Bin Zia, Damilola Ibosiola, Gareth Tyson",
+    "venue": "Proceedings of the ACM Web Conference 2023",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/84902"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Lon-eå at SemEval-2023 Task 11: A Comparison of Activation Functions for Soft and Hard Label Prediction",
+    "authors": "Peyman Hosseini, Mehran Hosseini, Sana Al-Azzawi, Marcus Liwicki, Ignacio Castro, Matthew Purver",
+    "venue": "Proceedings of the 17th International Workshop on Semantic Evaluation (SemEval-2023)",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/91939"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Lady and the Tramp Nextdoor: Online Manifestations of Real-World Inequalities in the Nextdoor Social Network",
+    "authors": "Waleed Iqbal, Vahid Ghafouri, Gareth Tyson, Guillermo Suarez-Tangil, Ignacio Castro",
+    "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/131784"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Cashing in on contacts: Characterizing the onlyfans ecosystem",
+    "authors": "Pelayo Vallina, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the ACM Web Conference 2023",
+    "year": "2023"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Tracing Linguistic Markers of Influence in a Large Online Organisation",
+    "authors": "Prashant Khare, Ravi Shekhar, Mladen Karan, Stephen McQuistin, Colin Perkins, Ignacio Castro, Gareth Tyson, Patrick GT Healey, Matthew Purver",
+    "venue": "61st Annual Meeting of the Association for Computational Linguistics (ACL '23), Toronto, Canada",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/94846"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Errare humanum est: What do RFC Errata say about Internet Standards?",
+    "authors": "Stephen McQuistin, Mladen Karan, Prashant Khare, Colin Perkins, Matthew Purver, Patrick Healey, Ignacio Castro, Gareth Tyson",
+    "venue": "IFIP TMA",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/91943"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "An analysis of Twitter discourse on the war between Russia and Ukraine",
+    "authors": "Haris Bin Zia, Ehsan Ul Haq, Ignacio Castro, Pan Hui, Gareth Tyson",
+    "venue": "arXiv preprint arXiv:2306.11390",
+    "year": "2023",
+    "url": "https://arxiv.org/abs/2306.11390"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "LEDA: a Large-Organization Email-Based Decision-Dialogue-Act Analysis Dataset",
+    "authors": "Vanja M Karan, Prashant Khare, Ravi Shekhar, Stephen McQuistin, Ignacio Castro, Gareth Tyson, Colin Perkins, Patrick Healey, Matthew Purver",
+    "venue": "Findings of the Association for Computational Linguistics: ACL 2023",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/91945"
+  },
+  {
+    "date": "2023-01-01",
+    "title": "Flocking to Mastodon: Tracking the Great Twitter Migration",
+    "authors": "Jiahui He, Haris Bin Zia, Ignacio Castro, Aravindh Raman, Nishanth Sastry, Gareth Tyson",
+    "venue": "Proceedings of the 2023 ACM on Internet Measurement Conference",
+    "year": "2023",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/96225"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "A deep dive into COVID-19-related messages on WhatsApp in Pakistan",
+    "authors": "R Tallal Javed, Muhammad Usama, Waleed Iqbal, Junaid Qadir, Gareth Tyson, Ignacio Castro, Kiran Garimella",
+    "venue": "Social Network Analysis and Mining",
+    "year": "2022",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/76055"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "On the latency impact of remote peering",
+    "authors": "Fabricio Mazzola, Pedro Marcos, Ignacio Castro, Matthew Luckie, Marinho Barcellos",
+    "venue": "International Conference on Passive and Active Network Measurement",
+    "year": "2022",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/78621"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "The Web We Weave: Untangling the Social Graph of the IETF",
+    "authors": "Prashant Khare, Mladen Karan, Stephen McQuistin, Colin Perkins, Gareth Tyson, Matthew Purver, Patrick GT Healey, Ignacio Castro",
+    "venue": "AAAI ICWSM",
+    "year": "2022",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/78798"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "Toxicity in the Decentralized Web and the Potential for Model Sharing",
+    "authors": "Haris Bin Zia, Aravindh Raman, Ignacio Castro, Ishaku Hassan Anaobi, Emiliano De Cristofaro, Nishanth Sastry, Gareth Tyson",
+    "venue": "ACM SIGMETRICS",
+    "year": "2022",
+    "url": "https://arxiv.org/abs/2204.12709"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "Improving zero-shot cross-lingual hate speech detection with pseudo-label fine-tuning of transformer language models",
+    "authors": "Haris Bin Zia, Ignacio Castro, Arkaitz Zubiaga, Gareth Tyson",
+    "venue": "Proceedings of the International AAAI conference on web and social media",
+    "year": "2022",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/82960"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "MMVAE at semeval-2022 task 5: A multi-modal multi-task VAE on misogynous meme detection",
+    "authors": "Yimeng Gu, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the 16th International Workshop on Semantic Evaluation (SemEval-2022)",
+    "year": "2022"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "Design and Evaluation of IPFS: A Storage Layer for the Decentralized Web",
+    "authors": "Dennis Trautwein, Aravindh Raman, Gareth Tyson, Ignacio Castro, Will Scott, Moritz Schubotz, Bela Gipp, Yiannis Psaras",
+    "venue": "Proceedings of the ACM SIGCOMM 2022 Conference",
+    "year": "2022",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/79960"
+  },
+  {
+    "date": "2022-01-01",
+    "title": "Exploring crowdsourced content moderation through lens of Reddit during COVID-19",
+    "authors": "Waleed Iqbal, Muhammad Haseeb Arshad, Gareth Tyson, Ignacio Castro",
+    "venue": "Proceedings of the 17th Asian internet engineering conference",
+    "year": "2022"
+  },
+  {
+    "date": "2021-01-01",
+    "title": "Optimal estimation of link delays based on end-to-end active measurements",
+    "authors": "Mohammad M Tajiki, SH Ghasemi Petroudi, Stefano Salsano, Steve Uhlig, Ignacio Castro",
+    "venue": "IEEE Transactions on Network and Service Management",
+    "year": "2021",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/82571"
+  },
+  {
+    "date": "2021-01-01",
+    "title": "Racist or sexist meme? classifying memes beyond hateful",
+    "authors": "Haris Bin Zia, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021)",
+    "year": "2021"
+  },
+  {
+    "date": "2021-01-01",
+    "title": "Characterising the IETF Through the Lens of RFC Deployment",
+    "authors": "Stephen McQuistin, Mladen Karan, Prashant Khare, Colin Perkins, Gareth Tyson, Matthew Purver, Patrick Healey, Waleed Iqbal, Junaid Qadir, Ignacio Castro",
+    "venue": "IMC",
+    "year": "2021",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/76121"
+  },
+  {
+    "date": "2021-01-01",
+    "title": "Exploring Content Moderation in the Decentralised Web: The Pleroma Case",
+    "authors": "Anaobi Ishaku Hassan, Aravindh Raman, Ignacio Castro, Haris Bin Zia, Emiliano De Cristofaro, Nishanth Sastry, Gareth Tyson",
+    "venue": "ACM CoNEXT",
+    "year": "2021",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/76120"
+  },
+  {
+    "date": "2021-01-01",
+    "title": "The impact of Capitol Hill on Pleroma: the case for decentralised moderation",
+    "authors": "Anaobi Ishaku Hassan, Aravindh Raman, Ignacio Castro, Gareth Tyson",
+    "venue": "Proceedings of the CoNEXT Student Workshop",
+    "year": "2021"
+  },
+  {
+    "date": "2020-01-01",
+    "title": "Mobile App Squatting",
+    "authors": "Yangyu Hu, Haoyu Wang, Ren He, Li Li, Gareth Tyson, Ignacio Castro, Yao Guo, Lei Wu, Guoai Xu",
+    "venue": "Proceedings of The Web Conference 2020",
+    "year": "2020",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/63220"
+  },
+  {
+    "date": "2020-01-01",
+    "title": "Leveraging data science to combat COVID-19: A comprehensive review",
+    "authors": "Siddique Latif, Muhammad Usman, Sanaullah Manzoor, Waleed Iqbal, Junaid Qadir, Gareth Tyson, Ignacio Castro, Adeel Razi, Maged N Kamel Boulos, Adrian Weller",
+    "venue": "IEEE Transactions on Artificial Intelligence",
+    "year": "2020",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/67218"
+  },
+  {
+    "date": "2020-01-01",
+    "title": "A First Look at COVID-19 Messages on WhatsApp in Pakistan",
+    "authors": "R Tallal Javed, Mirza Elaaf Shuja, Muhammad Usama, Junaid Qadir, Waleed Iqbal, Gareth Tyson, Ignacio Castro, Kiran Garimella",
+    "venue": "2020 IEEE/ACM International conference on advances in social networks analysis and mining (ASONAM)",
+    "year": "2020",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/78623"
+  },
+  {
+    "date": "2019-01-01",
+    "title": "Who Watches the Watchmen: Exploring Complaints on the Web",
+    "authors": "Damilola Ibosiola, Ignacio Castro, Gianluca Stringhini, Steve Uhlig, Gareth Tyson",
+    "venue": "The World Wide Web Conference",
+    "year": "2019",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/56166"
+  },
+  {
+    "date": "2019-01-01",
+    "title": "An Empirical Study of the Cost of DNS-over-HTTPS",
+    "authors": "Timm Böttger, Felix Cuadrado, Gianni Antichi, Eder Leão Fernandes, Gareth Tyson, Ignacio Castro, Steve Uhlig",
+    "venue": "Proceedings of the Internet Measurement Conference",
+    "year": "2019",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/59956"
+  },
+  {
+    "date": "2018-01-01",
+    "title": "Open Connect Everywhere: A Glimpse at the Internet Ecosystem through the Lens of the Netflix CDN",
+    "authors": "Timm Böttger, Felix Cuadrado, Gareth Tyson, Ignacio Castro, Steve Uhlig",
+    "venue": "ACM SIGCOMM Computer Communication Review",
+    "year": "2018",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/22457"
+  },
+  {
+    "date": "2018-01-01",
+    "title": "Umbrella: a deployable SDN-enabled IXP Switching Fabric",
+    "authors": "Marc Bruyere, Remy Lapeyrade, Eder L Fernandes, Ignacio Castro, Steve Uhlig, Andrew W Moore, Gianni Antichi",
+    "venue": "Proceedings of the Symposium on SDN Research",
+    "year": "2018"
+  },
+  {
+    "date": "2018-01-01",
+    "title": "An SDN-Inspired Model for Faster Network Experimentation",
+    "authors": "Eder L Fernandes, Gianni Antichi, Ignacio Castro, Steve Uhlig",
+    "venue": "Proceedings of the 2018 ACM SIGSIM Conference on Principles of Advanced Discrete Simulation",
+    "year": "2018",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/46049"
+  },
+  {
+    "date": "2018-01-01",
+    "title": "Rethinking IXPs’ Architecture in the Age of SDN",
+    "authors": "Marc Bruyere, Gianni Antichi, Eder L Fernandes, Remy Lapeyrade, Steve Uhlig, Philippe Owezarski, Andrew W Moore, Ignacio Castro",
+    "venue": "IEEE Journal on Selected Areas in Communications",
+    "year": "2018",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/49409"
+  },
+  {
+    "date": "2018-01-01",
+    "title": "The Elusive Internet Flattening: 10 Years of IXP Growth",
+    "authors": "Timm Böttger, Gianni Antichi, Eder L Fernandes, Roberto di Lallo, Marc Bruyere, Steve Uhlig, Ignacio Castro",
+    "venue": "",
+    "year": "2018",
+    "url": "https://arxiv.org/abs/1810.10963"
+  },
+  {
+    "date": "2017-01-01",
+    "title": "Exploring http header manipulation in-the-wild",
+    "authors": "Gareth Tyson, Shan Huang, Felix Cuadrado, Ignacio Castro, Vasile C Perta, Arjuna Sathiaseelan, Steve Uhlig",
+    "venue": "Proceedings of the 26th International Conference on World Wide Web",
+    "year": "2017",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/22154"
+  },
+  {
+    "date": "2017-01-01",
+    "title": "SDN-enabled traffic engineering and advanced blackholing at IXPs",
+    "authors": "Christoph Dietzel, Gianni Antichi, Ignacio Castro, Eder L Fernandes, Marco Chiesa, Daniel Kopp",
+    "venue": "Proceedings of the Symposium on SDN Research",
+    "year": "2017"
+  },
+  {
+    "date": "2017-01-01",
+    "title": "ENDEAVOUR: A scalable SDN architecture for real-world IXPs",
+    "authors": "Gianni Antichi, Ignacio Castro, Marco Chiesa, Eder L Fernandes, Remy Lapeyrade, Daniel Kopp, Jong Hun Han, Marc Bruyere, Christoph Dietzel, Mitchell Gusat",
+    "venue": "IEEE Journal on Selected Areas in Communications",
+    "year": "2017",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/39823"
+  },
+  {
+    "date": "2016-01-01",
+    "title": "Inter-Domain Networking Innovation on Steroids: Empowering IXPs with SDN Capabilities",
+    "authors": "Marco Chiesa, Christoph Dietzel, Gianni Antichi, Marc Bruyere, Ignacio Castro, Mitch Gusat, Thomas King, Andrew W Moore, Thanh Dang Nguyen, Philippe Owezarski",
+    "venue": "IEEE Communications Magazine",
+    "year": "2016",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/70108"
+  },
+  {
+    "date": "2016-01-01",
+    "title": "Horse: towards an SDN traffic dynamics simulator for large scale networks.",
+    "authors": "Eder Leão Fernandes, Gianni Antichi, Ignacio Castro, Steve Uhlig",
+    "venue": "SIGCOMM",
+    "year": "2016"
+  },
+  {
+    "date": "2015-01-01",
+    "title": "Route Bazaar: Automatic Interdomain Contract Negotiation",
+    "authors": "Ignacio Castro, Aurojit Panda, Barath Raghavan, Scott Shenker, Sergey Gorinsky",
+    "venue": "15th Workshop on Hot Topics in Operating Systems (HotOS XV)",
+    "year": "2015"
+  },
+  {
+    "date": "2014-01-01",
+    "title": "Remote Peering: More Peering without Internet Flattening",
+    "authors": "Ignacio Castro, Juan Camilo Cardona, Sergey Gorinsky, Pierre Francois",
+    "venue": "Proceedings of CoNEXT",
+    "year": "2014",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/64890"
+  },
+  {
+    "date": "2013-01-01",
+    "title": "Using Tuangou to Reduce IP Transit Costs",
+    "authors": "I. Castro, R. Stanojevic, S. Gorinsky",
+    "venue": "IEEE/ACM Transactions on Networking",
+    "year": "2013"
+  },
+  {
+    "date": "2012-01-01",
+    "title": "T4P: Hybrid interconnection for cost reduction",
+    "authors": "Ignacio Castro, Sergey Gorinsky",
+    "venue": "2012 Proceedings IEEE INFOCOM Workshops",
+    "year": "2012"
+  },
+  {
+    "date": "2011-01-01",
+    "title": "CIPT: Using tuangou to reduce IP transit costs",
+    "authors": "Rade Stanojevic, Ignacio Castro, Sergey Gorinsky",
+    "venue": "ACM CoNEXT",
+    "year": "2011"
+  }
+]
