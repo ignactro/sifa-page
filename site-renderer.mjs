@@ -265,20 +265,16 @@ function publicationItem(item) {
         </div>
 
         ${
-          item.authors
-            ? `<div class="authors">${escapeHtml(item.authors)}</div>`
-            : ''
-        }
-
-        ${
-          item.venue || item.year
-            ? `<div class="metadata">
-                 ${escapeHtml(
-                   [item.venue, item.year]
-                     .filter(Boolean)
-                     .join(', ')
-                 )}
-               </div>`
+          item.authors || item.venue || item.year
+            ? `<div class="authors">${escapeHtml(
+                [
+                  item.authors,
+                  item.venue ? `· ${item.venue}` : null,
+                  item.year ? `(${item.year})` : null,
+                ]
+                  .filter(Boolean)
+                  .join(' ')
+              )}</div>`
             : ''
         }
 
