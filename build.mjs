@@ -20,6 +20,12 @@ const SIFA_ID =
 const SIFA_BASE = process.env.SIFA_BASE ?? 'https://sifa.id';
 const OUT = 'dist';
 
+async function readJson(path) {
+  return JSON.parse(
+    await readFile(new URL(path, import.meta.url), 'utf8')
+  );
+}
+
 async function main() {
   console.log(`Building site for "${SIFA_ID}"...`);
 
@@ -32,11 +38,18 @@ async function main() {
     throw new Error(`No public Sifa profile found for "${SIFA_ID}".`);
   }
 
-  const localProfile = JSON.parse(
-    await readFile(new URL('./profile.json', import.meta.url), 'utf8')
-  );
+  const localProfile = await readJson('./profile.json');
+  const news = await readJson('./content/news.json');
+  const publications = await readJson('./content/publications.json');
+  const funding = await readJson('./content/funding.json');
+  const positions = await readJson('./content/positions.json');
 
   Object.assign(profile, localProfile);
+
+  profile.news = news;
+  profile.publications = publications;
+  profile.funding = funding;
+  profile.positions = positions;
 
   await rm(OUT, { recursive: true, force: true });
   await mkdir(OUT, { recursive: true });
