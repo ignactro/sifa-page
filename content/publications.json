@@ -1,1 +1,96 @@
-[]
+[
+  {
+    "date": "2026-08-28",
+    "title": "CG-TTRL: Context-Guided Test-Time Reinforcement Learning for On-Device Large Language Models",
+    "authors": "Peyman Hosseini, Ondrej Bohdal, Taha Ceritli, Ignacio Castro, Matthew Purver, Mete Ozay, Umberto Michieli",
+    "venue": "Transactions of the Association for Computational Linguistics",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2511.06430"
+  },
+  {
+    "date": "2026-06-29",
+    "title": "DuoMem: Towards Capable On-Device Memory Agents via Dual-Space Distillation",
+    "authors": "Peyman Hosseini, Ondrej Bohdal, Ahmed Alajrami, Andrea Maracani, Ignacio Castro, Matthew Purver, Mete Ozay, Savas Ozkan, Taha Ceritli",
+    "venue": "arXiv preprint arXiv:2606.29961",
+    "year": "2026",
+    "url": "https://arxiv.org/abs/2606.29961"
+  },
+  {
+    "date": "2026-04-12",
+    "title": "Open or Blocked Skies? Community Moderation Practices in Bluesky",
+    "authors": "Saidu Sokoto, Leonhard Balduf, Onur Ascigil, Gareth Tyson, Ignacio Castro, Björn Scheuermann, Andrea Baronchelli, Michał Król",
+    "venue": "Proceedings of the ACM Web Conference 2026",
+    "year": "2026"
+  },
+  {
+    "date": "2025-08-01",
+    "title": "Contrastive Domain Adaptation with Test-Time Training for Out-of-Context News Detection",
+    "authors": "Yimeng Gu, Mengqi Zhang, Ignacio Castro, Shu Wu, Gareth Tyson",
+    "venue": "Pattern Recognition",
+    "year": "2025",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/109158"
+  },
+  {
+    "date": "2025-07-22",
+    "title": "Two Decades of IETF Affiliations: Evolution and Impact",
+    "authors": "Yangjun Zhang, Stephen McQuistin, Vanja Karan, Hugo Ramirez-Centeno, Colin Perkins, Gareth Tyson, Ignacio Castro",
+    "venue": "Proceedings of the 2025 Applied Networking Research Workshop",
+    "year": "2025"
+  },
+  {
+    "date": "2025-05-28",
+    "title": "Multi-MLLM Knowledge Distillation for Out-of-Context News Detection",
+    "authors": "Yimeng Gu, Zhao Tong, Ignacio Castro, Shu Wu, Gareth Tyson",
+    "venue": "arXiv preprint arXiv:2505.22517",
+    "year": "2025",
+    "url": "https://arxiv.org/abs/2505.22517"
+  },
+  {
+    "date": "2025-01-22",
+    "title": "Bootstrapping Social Networks: Lessons from Bluesky Starter Packs",
+    "authors": "Leonhard Balduf, Saidu Sokoto, Andrea Baronchelli, Ignacio Castro, Michał Król, Gareth Tyson, George Pavlou, Björn Scheuermann, Onur Ascigil",
+    "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+    "year": "2025",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/131700"
+  },
+  {
+    "date": "2025-01-10",
+    "title": "Collaborative Content Moderation in the Fediverse",
+    "authors": "Haris Bin Zia, Aravindh Raman, Ignacio Castro, Gareth Tyson",
+    "venue": "arXiv preprint arXiv:2501.05871",
+    "year": "2025",
+    "url": "https://arxiv.org/abs/2501.05871"
+  },
+  {
+    "date": "2025-01-01",
+    "title": "Efficient Solutions for an Intriguing Failure of LLMs: Long Context Window Does Not Mean LLMs Can Analyze Long Sequences Flawlessly",
+    "authors": "Peyman Hosseini, Ignacio Castro, Iacopo Ghinassi, Matthew Purver",
+    "venue": "Proceedings of the 31st international conference on computational linguistics",
+    "year": "2025",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/104794"
+  },
+  {
+    "date": "2025-01-01",
+    "title": "A dataset for expert reviewer recommendation with large language models as zero-shot rankers",
+    "authors": "Vanja M Karan, Stephen McQuistin, Ryo Yanagida, Colin Perkins, Gareth Tyson, Ignacio Castro, Patrick Healey, Matthew Purver",
+    "venue": "Proceedings of the 31st international conference on computational linguistics",
+    "year": "2025",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/104793"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Power and Vulnerability: Managing Sensitive Language in Organizational Communication",
+    "authors": "Patrick GT Healey, Prashant Khare, Ignacio Castro, Gareth Tyson, Mladen Karan, Ravi Shekhar, Stephen McQuistin, Colin Perkins, Matthew Purver",
+    "venue": "Frontiers in Psychology",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/94939"
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Temporal network analysis of email communication patterns in a long standing hierarchy",
+    "authors": "Matthew Russell Barnes, Mladen Karan, Stephen McQuistin, Colin Perkins, Gareth Tyson, Matthew Purver, Ignacio Castro, Richard G Clegg",
+    "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
+    "year": "2024",
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/94550"
+  },
+  {
