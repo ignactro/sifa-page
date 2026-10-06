@@ -1,1 +1,24 @@
-[]
+[
+  
+  {
+    "date": "2026-10-06",
+    "title": "MSCA DN RESILIOUS awarded (€4.53M)",
+    "text": "Our project RESILIOUS has been awarded €4.53M through the Horizon Europe Marie Skłodowska-Curie Doctoral Networks programme. The project will train 15 doctoral researchers and study Internet resilience across terrestrial, satellite and submarine infrastructure, including security, recovery, governance and standardisation; I am PI at QMUL.",
+    "url": "https://cordis.europa.eu/project/id/101311731",
+    "status": "live"
+  },
+  {
+    "date": "2026-10-06",
+    "title": "IGF 2026 workshop selected",
+    "html": "Our workshop ‘Can AI Change Who Shapes Open Internet Standards?’ has been selected for the Internet Governance Forum 2026. Co-organised with <a href=\"https://www.irtf.org/chair.html\" target=\"_blank\" rel=\"noopener noreferrer\">Dirk Kutscher, IRTF Chair</a>, the session brings together <a href=\"https://www.internethalloffame.org/inductee/anriette-esterhuysen/\" target=\"_blank\" rel=\"noopener noreferrer\">Anriette Esterhuysen</a> (Association for Progressive Communications), <a href=\"https://www.internethalloffame.org/inductee/adiel-akplogan/\" target=\"_blank\" rel=\"noopener noreferrer\">Adiel Akplogan</a> (VP, Technical Engagement, ICANN), <a href=\"https://mnot.net/personal/\" target=\"_blank\" rel=\"noopener noreferrer\">Mark Nottingham</a> (Cloudflare), and <a href=\"https://media.intgovforum.org/en/content/mag-2026-members\" target=\"_blank\" rel=\"noopener noreferrer\">Esteve Sanz</a> (Head of Sector, Internet Governance and Multi-Stakeholder Dialogue, European Commission). ",
+    "url": "https://intgovforum.org/en/content/igf-2026-ws-225-can-ai-change-who-shapes-open-internet-standards",
+    "status": "live"
+  },
+    {
+    "date": "2026-10-06",
+    "title": "FediGuard accepted at ACM SIGMETRICS 2027",
+    "text": "Our paper ‘FediGuard: Decentralized Content Moderation for the Fediverse’, by Jiahui He, Haris Bin Zia, Ignacio Castro, Peixian Zhang, Yupeng He and Gareth Tyson, has been accepted at ACM SIGMETRICS 2027. The work examines decentralised content moderation in the Fediverse and proposes FediGuard to support moderation across independently operated servers.",
+    "url": "https://www.sigmetrics.org/sigmetrics2027/",
+    "status": "live"
+  }
+]
