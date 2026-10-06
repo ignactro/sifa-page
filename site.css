@@ -107,7 +107,7 @@ a:hover {
 
 .profile-links a {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 10px;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
