@@ -1,92 +1,92 @@
 [
   {
-    "category": "Programme Committees",
+    "category": "Technical Programme Committees",
     "title": "AAAI ICWSM",
     "role": "Senior Program Committee",
     "years": "2027"
   },
   {
-    "category": "Programme Committees",
+    "category": "Technical Programme Committees",
     "title": "ACM SIGCOMM",
     "role": "Technical Program Committee",
     "years": "2026"
   },
   {
-    "category": "Programme Committees",
+    "category": "Technical Programme Committees",
     "title": "ACM HotNets",
     "role": "Program Committee",
     "years": "2025–2026"
   },
   {
-    "category": "Programme Committees",
+    "category": "Technical Programme Committees",
     "title": "ACM Internet Measurement Conference (IMC)",
     "role": "Technical Program Committee",
     "years": "2022–2026"
   },
   {
-    "category": "Programme Committees",
+    "category": "Technical Programme Committees",
     "title": "ACM Web Conference",
     "role": "Program Committee",
     "years": "2023–2026"
   },
   {
-    "category": "Programme Committees",
+    "category": "Technical Programme Committees",
     "title": "AAAI ICWSM",
     "role": "Program Committee",
     "years": "2023–2026"
   },
   {
-    "category": "Programme Committees",
-    "title": "ACM/IRTF Applied Networking Research Workshop (ANRW)",
-    "role": "Program Committee",
-    "years": "2025"
-  },
-  {
-    "category": "Programme Committees",
-    "title": "ACM CoNEXT",
-    "role": "Technical Program Committee",
-    "years": "2019–2021"
-  },
-  {
-    "category": "Programme Committees",
-    "title": "IEEE ICNP",
-    "role": "Technical Program Committee",
-    "years": "2017–2021"
-  },
-  {
-    "category": "Reviewing",
-    "title": "Leverhulme Trust",
-    "role": "Grant reviewer",
-    "years": ""
-  },
-  {
-    "category": "Reviewing",
-    "title": "Journals and conferences",
-    "role": "Reviewer for major journals and conferences",
-    "years": ""
-  },
-  {
-    "category": "Reviewing",
+    "category": "Technical Programme Committees",
     "title": "AAAI ICWSM",
     "role": "Best Reviewer Award",
     "years": "2024"
   },
   {
-    "category": "External Examining",
-    "title": "PhD examiner",
-    "role": "University of Oslo; IMDEA Networks; Universidad Carlos III de Madrid (2); Universidad Politécnica de Madrid",
-    "years": "5 examinations"
+    "category": "Technical Programme Committees",
+    "title": "ACM/IRTF Applied Networking Research Workshop (ANRW)",
+    "role": "Program Committee",
+    "years": "2025"
+  },
+  {
+    "category": "Technical Programme Committees",
+    "title": "ACM CoNEXT",
+    "role": "Technical Program Committee",
+    "years": "2019–2021"
+  },
+  {
+    "category": "Technical Programme Committees",
+    "title": "IEEE ICNP",
+    "role": "Technical Program Committee",
+    "years": "2017–2021"
+  },
+  {
+    "category": "Journals",
+    "title": "ACM SIGCOMM Computer Communication Review (CCR)",
+    "role": "Reviewer",
+    "years": "2019"
+  },
+  {
+    "category": "Journals",
+    "title": "Computer Networks",
+    "role": "Reviewer",
+    "years": "2015"
+  },
+  {
+    "category": "Grant Reviewing",
+    "title": "Leverhulme Trust",
+    "role": "Grant reviewer",
+    "years": ""
   },
   {
     "category": "External Examining",
-    "title": "MPhil examiner",
-    "role": "University of St Andrews",
-    "years": "1 examination"
+    "title": "PhD examiner",
+    "role": "University of Oslo; IMDEA Networks; Universidad Carlos III de Madrid (2); Universidad Politécnica de Madrid",
+    "years": ""
   },
   {
     "category": "External Examining",
     "title": "MBA examiner",
     "role": "Frankfurt School of Finance & Management",
-    "years": "1 examination"
+    "years": ""
   }
 ]
