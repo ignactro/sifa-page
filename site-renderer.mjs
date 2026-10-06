@@ -236,15 +236,11 @@ function document(profile, body, current = '', title = '') {
 }
 
 function newsItem(item) {
-  const url = safeUrl(item.url);
+  const postUrl = item.slug
+    ? `/news/${encodeURIComponent(item.slug)}.html`
+    : '/news.html';
 
-  // `html` is trusted local content used when a news item needs inline links.
-  // Plain `text` continues to be escaped as before.
   const body = item.html ?? escapeHtml(item.text ?? '');
-
-  const content = url && !item.html
-    ? `<a href="${escapeHtml(url)}">${body}</a>`
-    : body;
 
   return `
     <article class="item news-item">
@@ -255,7 +251,15 @@ function newsItem(item) {
       }
 
       <div class="item-main">
-        ${content}
+        <div class="news-title">
+          <a href="${postUrl}">
+            ${escapeHtml(item.title ?? '')}
+          </a>
+        </div>
+
+        <div class="item-description">
+          ${body}
+        </div>
       </div>
     </article>
   `;
