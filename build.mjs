@@ -9,6 +9,7 @@ import {
   renderNewsPage,
   renderPublicationsPage,
   renderFundingPage,
+  renderServicePage,
 } from './site-renderer.mjs';
 
 const SIFA_ID =
@@ -44,12 +45,14 @@ async function main() {
     publications,
     funding,
     hiring,
+    service,
   ] = await Promise.all([
     readJson('./profile.json'),
     readJson('./content/news.json'),
     readJson('./content/publications.json'),
     readJson('./content/funding.json'),
     readJson('./content/hiring.json'),
+    readJson('./content/service.json'),
   ]);
 
   Object.assign(profile, localProfile, {
@@ -57,6 +60,7 @@ async function main() {
     publications,
     funding,
     hiring,
+    service,
   });
 
   await rm(OUT, { recursive: true, force: true });
@@ -74,6 +78,7 @@ async function main() {
     writeFile(`${OUT}/news.html`, renderNewsPage(profile)),
     writeFile(`${OUT}/publications.html`, renderPublicationsPage(profile)),
     writeFile(`${OUT}/funding.html`, renderFundingPage(profile)),
+    writeFile(`${OUT}/service.html`, renderServicePage(profile)),
   ]);
 
   console.log('Done.');
