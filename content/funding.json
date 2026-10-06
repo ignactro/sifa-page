@@ -1,7 +1,50 @@
 [
   {
-    "title": "RESILIOUS (€4.5M) — Building Europe’s Internet Resilience for a Connected Future",
+    "date": "2027-01-01",
+    "title": "RESILIOUS — Building Europe’s Internet Resilience for a Connected Future",
     "url": "https://cordis.europa.eu/project/id/101311731",
-    "description": "I am the PI at QMUL in RESILIOUS, a €4.5M Horizon Europe <a href=\"https://marie-sklodowska-curie-actions.ec.europa.eu/actions/doctoral-networks\">MSCA Doctoral Network</a> on resilient Internet infrastructure and governance. I will be recruiting 3xPhD students (with another 12 recruited across the consortium). Positions are likely to open in early 2027. If you are interested, get in touch."
+    "funder": "Horizon Europe MSCA · Grant 101311731 · €4.53M",
+    "years": "2027–2030",
+    "description": "PI at QMUL. A Doctoral Network developing resilient Internet infrastructure across terrestrial, satellite and submarine systems, alongside cybersecurity, governance and standardisation."
+  },
+  {
+    "date": "2025-12-01",
+    "title": "Neighbourhood Signals — Online Discussions and Crime",
+    "url": "https://www.rephrain.ac.uk/neighbourhood-signals/",
+    "funder": "UKRI REPHRAIN · £23.8K",
+    "years": "2025–2026",
+    "description": "PI. Studies whether hyperlocal online discussions can provide early indicators of offline crime by linking longitudinal social-platform data with police-reported crime and socio-demographic data."
+  },
+  {
+    "date": "2024-01-01",
+    "title": "Fediverse Observatory",
+    "url": "https://www.rephrain.ac.uk/fedi-verse-impact-booster-award-project/",
+    "funder": "UKRI REPHRAIN · £20K",
+    "years": "2024",
+    "description": "PI. Developed an observatory providing researchers and policymakers with data and tools for studying harms, moderation and other dynamics across the Fediverse."
+  },
+  {
+    "date": "2022-05-01",
+    "title": "DSNmod — Moderation in Decentralised Social Networks",
+    "url": "https://www.rephrain.ac.uk/dsnmod/",
+    "funder": "UKRI REPHRAIN · £81K",
+    "years": "2022–2023",
+    "description": "PI. Studied content moderation in decentralised social networks and developed approaches for moderation across independent servers, including federated learning."
+  },
+  {
+    "date": "2022-03-01",
+    "title": "AP4L — Adaptive PETs to Protect & emPower People during Life Transitions",
+    "url": "https://gtr.ukri.org/projects?ref=EP/W032473/1",
+    "funder": "UKRI · EP/W032473/1 · £2.79M",
+    "years": "2022–2025",
+    "description": "Co-I. A multidisciplinary project developing privacy-enhancing technologies to protect people from online harms during major life transitions."
+  },
+  {
+    "date": "2020-01-01",
+    "title": "SoDeStream — Streamlining Social Decision Making for Improved Internet Standards",
+    "url": "https://sodestream.github.io/",
+    "funder": "EPSRC · EP/S033564/1 + EP/S036075/1 · £1.16M",
+    "years": "2020–2024",
+    "description": "Co-I. Studied decision-making in Internet standardisation using natural language processing, social network analysis and Internet measurement."
   }
 ]
