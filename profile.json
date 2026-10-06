@@ -2,13 +2,6 @@
   "displayName": "Ignacio Castro",
   "avatar": "https://ignacio-castro.uk/assets/2026_ignacio.jpg",
   "headline": "Assistant Professor at Queen Mary University of London",
-  "about": "I study the design, operation, and governance of Internet infrastructure and online platforms. My work examines the technical systems, communities, and institutions that shape the Internet, combining Internet measurement with computational social science. I am a chair of the <a href=\"https://datatracker.ietf.org/rg/rasprg/about/\">IRTF Research and Analysis of Standard-Setting Processes Research Group (RASP RG)</a>."  "website": "https://ignacio-castro.uk",
-
-  "news": [],
-
-  "publications": [],
-
-  "funding": [],
-
-  "positions": []
+  "about": "I study the design, operation, and governance of Internet infrastructure and online platforms. My work examines the technical systems, communities, and institutions that shape the Internet, combining Internet measurement with computational social science. I am a chair of the <a href=\"https://datatracker.ietf.org/rg/rasprg/about/\">IRTF Research and Analysis of Standard-Setting Processes Research Group (RASP RG)</a>.",
+  "website": "https://ignacio-castro.uk"
 }
