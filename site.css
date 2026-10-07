@@ -81,7 +81,7 @@ a:hover {
   height: 132px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center top;
   margin-bottom: 20px;
 }
 
