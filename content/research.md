@@ -10,7 +10,7 @@ I also have a long-standing interest in the economics of the Internet. My PhD fo
 
 I study how the architecture of online platforms affects how they are governed. I am particularly interested in decentralised platforms, where functions such as identity and moderation are distributed.
 
-My work has examined the Fediverse (e.g., Mastodon and Pleroma), including migration and portability [[IMC 2024](https://doi.org/10.1145/3646547.3689027)] and decentralised moderation [[ICWSM 2024](https://doi.org/10.1609/icwsm.v18i1.31293)]. I have studied the architecture of Bluesky, its growth and moderation [[IMC 2024](https://doi.org/10.1145/3646547.3688407)][[WWW 2026](https://doi.org/10.1145/3774904.3792106)]. More broadly, I am interested on content moderation and online harms, and on how platform architecture changes the way these problems can be addressed.
+My work has examined the Fediverse (e.g., Mastodon and Pleroma), including migration and portability [[IMC 2024](https://doi.org/10.1145/3646547.3689027)] and decentralised moderation [[ICWSM 2024](https://doi.org/10.1609/icwsm.v18i1.31293)]. I have also studied content moderation in IPFS' decentralised infrastructure  [[USENIX Security 2024](https://www.usenix.org/conference/usenixsecurity24/presentation/sokoto)]. More recently I have examined the architecture of Bluesky, its growth and moderation [[IMC 2024](https://doi.org/10.1145/3646547.3688407)][[WWW 2026](https://doi.org/10.1145/3774904.3792106)]. More broadly, I am interested on content moderation and online harms, and on how platform architecture changes the way these problems can be addressed.
 
 My work in this area has been funded through [AP4L](https://gtr.ukri.org/projects?ref=EP/W032473/1), [DSNmod](https://www.rephrain.ac.uk/), and the [Fediverse Observatory](https://www.rephrain.ac.uk/fedi-verse-impact-booster-award-project/).
 
@@ -20,5 +20,4 @@ I use online activity to study social and economic behaviour. This includes work
 
 I have supported this work with a grant studying the relationship between online discussions and crime is supported by the [Neighbourhood Signals](https://www.rephrain.ac.uk/neighbourhood-signals/).
 
-tituents discuss on Nextdoor.
 
