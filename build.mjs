@@ -7,6 +7,7 @@ import { fetchProfile } from '@singi-labs/sifa-sdk/query/fetchers';
 import {
   renderHome,
   renderNewsPage,
+  renderNewsPost,
   renderPublicationsPage,
   renderFundingPage,
   renderServicePage,
@@ -133,6 +134,7 @@ async function main() {
 
   await rm(OUT, { recursive: true, force: true });
   await mkdir(OUT, { recursive: true });
+  await mkdir(`${OUT}/news`, { recursive: true });
   await mkdir(`${OUT}/blog`, { recursive: true });
 
   cpSync('assets', `${OUT}/assets`, { recursive: true });
@@ -150,6 +152,17 @@ async function main() {
     writeFile(`${OUT}/funding.html`, renderFundingPage(profile)),
     writeFile(`${OUT}/service.html`, renderServicePage(profile)),
   ];
+
+  for (const item of news) {
+    if (!item.slug) continue;
+
+    pageWrites.push(
+      writeFile(
+        `${OUT}/news/${encodeURIComponent(item.slug)}.html`,
+        renderNewsPost(profile, item)
+      )
+    );
+  }
 
   for (const post of blog) {
     pageWrites.push(
