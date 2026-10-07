@@ -282,6 +282,29 @@ h2 {
   line-height: 1.5;
 }
 
+.publication-extras {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.publication-extras a {
+  color: var(--muted);
+}
+
+.publication-extras a:hover {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.publication-extras .publication-award {
+  color: var(--text);
+  font-weight: 600;
+}
+
 .service-group {
   margin-top: 34px;
 }

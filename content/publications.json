@@ -51,7 +51,29 @@
     "authors": "Leonhard Balduf, Saidu Sokoto, Andrea Baronchelli, Ignacio Castro, Michał Król, Gareth Tyson, George Pavlou, Björn Scheuermann, Onur Ascigil",
     "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
     "year": "2025",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/131700"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/131700",
+    "media": [
+      {
+        "label": "MSN",
+        "url": "https://www.msn.com/en-us/news/technology/study-finds-curated-starter-packs-fueled-rapid-user-growth-on-bluesky/ar-AA1H92fe"
+      },
+      {
+        "label": "Life Technology",
+        "url": "https://www.lifetechnology.com/blogs/life-technology-technology-news/study-finds-curated-starter-packs-fueled-rapid-user-growth-on-bluesky"
+      },
+      {
+        "label": "ScienMag",
+        "url": "https://scienmag.com/new-study-reveals-how-starter-packs-fueled-blueskys-rapid-growth/"
+      },
+      {
+        "label": "TechXplore",
+        "url": "https://techxplore.com/news/2025-06-curated-starter-fueled-rapid-user.html"
+      },
+      {
+        "label": "Fediverse Report",
+        "url": "https://fediversereport.com/bluesky-report-112/"
+      }
+    ]
   },
   {
     "date": "2025-01-10",
@@ -161,7 +183,29 @@
     "authors": "Leonhard Balduf, Saidu Sokoto, Onur Ascigil, Gareth Tyson, Björn Scheuermann, Maciej Korczyński, Ignacio Castro, Michaŀ Król",
     "venue": "Proceedings of the 2024 ACM on Internet Measurement Conference",
     "year": "2024",
-    "url": "https://arxiv.org/abs/2408.12449"
+    "url": "https://arxiv.org/abs/2408.12449",
+    "media": [
+      {
+        "label": "Nature",
+        "url": "https://www.nature.com/articles/d41586-024-03784-6"
+      },
+      {
+        "label": "Nature (2025)",
+        "url": "https://www.nature.com/articles/d41586-025-00177-1"
+      },
+      {
+        "label": "El País",
+        "url": "https://english.elpais.com/technology/2024-11-23/why-bluesky-is-different-the-freedom-to-choose-content-vs-the-dictatorship-of-the-algorithm.html"
+      },
+      {
+        "label": "El País (2025)",
+        "url": "https://elpais.com/tecnologia/2025-02-26/bluesky-lleno-de-usuarios-de-izquierdas-exiliados-de-x-esta-aun-lejos-de-ser-una-plaza-publica-digital.html"
+      },
+      {
+        "label": "MSN",
+        "url": "https://www.msn.com/en-us/news/technology/researchers-present-first-comprehensive-study-on-the-social-media-platform-bluesky/ar-AA1y1jaR"
+      }
+    ]
   },
   {
     "date": "2024-01-01",
@@ -216,7 +260,29 @@
     "authors": "Waleed Iqbal, Vahid Ghafouri, Gareth Tyson, Guillermo Suarez-Tangil, Ignacio Castro",
     "venue": "Proceedings of the International AAAI Conference on Web and Social Media",
     "year": "2023",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/131784"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/131784",
+    "media": [
+      {
+        "label": "Muy Interesante",
+        "url": "https://muyinteresante.okdiario.com/tecnologia/60721.html"
+      },
+      {
+        "label": "New York Post",
+        "url": "https://nypost.com/2023/06/06/how-your-social-media-posts-actually-reveal-your-salary/"
+      },
+      {
+        "label": "SciTechDaily",
+        "url": "https://scitechdaily.com/scientists-accurately-predict-individuals-income-solely-off-social-media-posts/"
+      },
+      {
+        "label": "Phys.org",
+        "url": "https://phys.org/news/2023-06-social-media-track-individuals-income.html"
+      },
+      {
+        "label": "Newswise",
+        "url": "https://www.newswise.com/articles/tracking-income-inequality-via-social-media-posts"
+      }
+    ]
   },
   {
     "date": "2023-01-01",
@@ -263,7 +329,13 @@
     "authors": "Jiahui He, Haris Bin Zia, Ignacio Castro, Aravindh Raman, Nishanth Sastry, Gareth Tyson",
     "venue": "Proceedings of the 2023 ACM on Internet Measurement Conference",
     "year": "2023",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/96225"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/96225",
+    "media": [
+      {
+        "label": "New Scientist",
+        "url": "https://www.newscientist.com/article/2349641-most-people-who-threatened-to-quit-twitter-for-mastodon-havent-left/"
+      }
+    ]
   },
   {
     "date": "2022-01-01",
@@ -318,7 +390,12 @@
     "authors": "Dennis Trautwein, Aravindh Raman, Gareth Tyson, Ignacio Castro, Will Scott, Moritz Schubotz, Bela Gipp, Yiannis Psaras",
     "venue": "Proceedings of the ACM SIGCOMM 2022 Conference",
     "year": "2022",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/79960"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/79960",
+    "awards": [
+      {
+        "label": "IETF/IRTF Applied Networking Research Prize 2023"
+      }
+    ]
   },
   {
     "date": "2022-01-01",
@@ -340,7 +417,13 @@
     "title": "Racist or sexist meme? classifying memes beyond hateful",
     "authors": "Haris Bin Zia, Ignacio Castro, Gareth Tyson",
     "venue": "Proceedings of the 5th Workshop on Online Abuse and Harms (WOAH 2021)",
-    "year": "2021"
+    "year": "2021",
+    "awards": [
+      {
+        "label": "Gold Prize (Task B) and Silver Prize (Task A), Facebook Hateful Memes Shared Task",
+        "url": "https://www.workshopononlineabuse.com/cfp/shared-task-on-hateful-memes"
+      }
+    ]
   },
   {
     "date": "2021-01-01",
@@ -371,7 +454,12 @@
     "authors": "Yangyu Hu, Haoyu Wang, Ren He, Li Li, Gareth Tyson, Ignacio Castro, Yao Guo, Lei Wu, Guoai Xu",
     "venue": "Proceedings of The Web Conference 2020",
     "year": "2020",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/63220"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/63220",
+    "awards": [
+      {
+        "label": "Best Student Paper Award, The Web Conference 2020"
+      }
+    ]
   },
   {
     "date": "2020-01-01",
@@ -395,7 +483,25 @@
     "authors": "Damilola Ibosiola, Ignacio Castro, Gianluca Stringhini, Steve Uhlig, Gareth Tyson",
     "venue": "The World Wide Web Conference",
     "year": "2019",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/56166"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/56166",
+    "media": [
+      {
+        "label": "TorrentFreak",
+        "url": "https://torrentfreak.com/hundreds-of-thousands-of-pirate-sites-disappear-following-takedown-notices/"
+      },
+      {
+        "label": "The Sun",
+        "url": "https://www.thesun.co.uk/news/9076610/pm-axe-sickening-terror-content-from-internet/"
+      },
+      {
+        "label": "GIGAZINE",
+        "url": "https://gigazine.net/gsc_news/en/20190516-complaint-system-like-wild-west/"
+      },
+      {
+        "label": "Phys.org",
+        "url": "https://phys.org/news/2019-05-online-complaint-google-twitter-wild.html"
+      }
+    ]
   },
   {
     "date": "2019-01-01",
@@ -403,7 +509,17 @@
     "authors": "Timm Böttger, Felix Cuadrado, Gianni Antichi, Eder Leão Fernandes, Gareth Tyson, Ignacio Castro, Steve Uhlig",
     "venue": "Proceedings of the Internet Measurement Conference",
     "year": "2019",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/59956"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/59956",
+    "media": [
+      {
+        "label": "Yahoo",
+        "url": "https://www.yahoo.com/news/dns-over-https-why-webs-141719081.html"
+      },
+      {
+        "label": "The Conversation",
+        "url": "https://theconversation.com/dns-over-https-why-the-webs-latest-privacy-tech-is-causing-an-outcry-125188"
+      }
+    ]
   },
   {
     "date": "2018-01-01",
@@ -411,7 +527,21 @@
     "authors": "Timm Böttger, Felix Cuadrado, Gareth Tyson, Ignacio Castro, Steve Uhlig",
     "venue": "ACM SIGCOMM Computer Communication Review",
     "year": "2018",
-    "url": "https://qmro.qmul.ac.uk/handle/123456789/22457"
+    "url": "https://qmro.qmul.ac.uk/handle/123456789/22457",
+    "media": [
+      {
+        "label": "The Register",
+        "url": "https://www.theregister.com/on-prem/2016/06/22/boffins-map-netflixs-open-connect-cdn/"
+      },
+      {
+        "label": "IEEE Spectrum",
+        "url": "https://spectrum.ieee.org/researchers-map-locations-of-4669-servers-in-netflixs-content-delivery-network"
+      },
+      {
+        "label": "Quartz",
+        "url": "https://qz.com/742474/how-streaming-video-changed-the-shape-of-the-internet"
+      }
+    ]
   },
   {
     "date": "2018-01-01",

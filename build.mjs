@@ -6,6 +6,8 @@ import { fetchProfile } from '@singi-labs/sifa-sdk/query/fetchers';
 
 import {
   renderHome,
+  renderResearchPage,
+  renderTalksMediaPage,
   renderNewsPage,
   renderNewsPost,
   renderPublicationsPage,
@@ -28,6 +30,10 @@ async function readJson(path) {
   return JSON.parse(
     await readFile(new URL(path, import.meta.url), 'utf8')
   );
+}
+
+async function readText(path) {
+  return readFile(new URL(path, import.meta.url), 'utf8');
 }
 
 function stripQuotes(value) {
@@ -112,6 +118,8 @@ async function main() {
     funding,
     hiring,
     service,
+    researchMarkdown,
+    talksMediaMarkdown,
     blog,
   ] = await Promise.all([
     readJson('./profile.json'),
@@ -120,6 +128,8 @@ async function main() {
     readJson('./content/funding.json'),
     readJson('./content/hiring.json'),
     readJson('./content/service.json'),
+    readText('./content/research.md'),
+    readText('./content/talks-media.md'),
     readBlogPosts(),
   ]);
 
@@ -129,6 +139,8 @@ async function main() {
     funding,
     hiring,
     service,
+    researchMarkdown,
+    talksMediaMarkdown,
     blog,
   });
 
@@ -146,6 +158,8 @@ async function main() {
 
   const pageWrites = [
     writeFile(`${OUT}/index.html`, renderHome(profile)),
+    writeFile(`${OUT}/research.html`, renderResearchPage(profile)),
+    writeFile(`${OUT}/talks-media.html`, renderTalksMediaPage(profile)),
     writeFile(`${OUT}/news.html`, renderNewsPage(profile)),
     writeFile(`${OUT}/blog.html`, renderBlogPage(profile)),
     writeFile(`${OUT}/publications.html`, renderPublicationsPage(profile)),

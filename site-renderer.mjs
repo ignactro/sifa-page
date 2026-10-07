@@ -62,6 +62,22 @@ function liveHiring(profile) {
   );
 }
 
+function selectedPublications(items = []) {
+  const hasExplicitSelection = items.some(
+    (item) => typeof item.selected === 'boolean'
+  );
+
+  if (hasExplicitSelection) {
+    return sorted(
+      items.filter((item) => item.selected === true)
+    ).slice(0, 10);
+  }
+
+  // Until selected flags are added to publications.json,
+  // treat the 10 most recent publications as selected.
+  return sorted(items).slice(0, 10);
+}
+
 function sidebar(profile, current = '') {
   const hasNews = (profile.news ?? []).length > 0;
   const hasBlog = (profile.blog ?? []).length > 0;
@@ -127,21 +143,9 @@ function sidebar(profile, current = '') {
       </div>
 
       <nav class="nav">
-        ${
-          hasNews
-            ? `<a href="/news.html" ${
-                current === 'news' ? 'aria-current="page"' : ''
-              }>News</a>`
-            : ''
-        }
-
-        ${
-          hasBlog
-            ? `<a href="/blog.html" ${
-                current === 'blog' ? 'aria-current="page"' : ''
-              }>Blog</a>`
-            : ''
-        }
+        <a href="/research.html" ${
+          current === 'research' ? 'aria-current="page"' : ''
+        }>Research</a>
 
         ${
           hasPublications
@@ -167,9 +171,29 @@ function sidebar(profile, current = '') {
             : ''
         }
 
+        <a href="/talks-media.html" ${
+          current === 'talks-media' ? 'aria-current="page"' : ''
+        }>Talks &amp; Media</a>
+
+        ${
+          hasNews
+            ? `<a href="/news.html" ${
+                current === 'news' ? 'aria-current="page"' : ''
+              }>News</a>`
+            : ''
+        }
+
         ${
           hasHiring
             ? `<a href="/#hiring">Hiring</a>`
+            : ''
+        }
+
+        ${
+          hasBlog
+            ? `<a href="/blog.html" ${
+                current === 'blog' ? 'aria-current="page"' : ''
+              }>Blog</a>`
             : ''
         }
       </nav>
@@ -334,7 +358,23 @@ function newsExternalLink(item) {
   `;
 }
 
-function publicationItem(item) {
+function publicationExtra(entry, className = '') {
+  const item = typeof entry === 'string'
+    ? { label: entry }
+    : entry ?? {};
+
+  const label = escapeHtml(item.label ?? '');
+  if (!label) return '';
+
+  const url = safeUrl(item.url);
+  const classes = className ? ` class="${className}"` : '';
+
+  return url
+    ? `<a${classes} href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">[${label}]</a>`
+    : `<span${classes}>[${label}]</span>`;
+}
+
+function publicationItem(item, { showExtras = true } = {}) {
   const url = safeUrl(item.url);
   const title = escapeHtml(item.title ?? '');
 
@@ -352,6 +392,16 @@ function publicationItem(item) {
     .filter(Boolean)
     .join(' ');
 
+  const media = (item.media ?? [])
+    .map((entry) => publicationExtra(entry))
+    .filter(Boolean);
+
+  const awards = (item.awards ?? [])
+    .map((entry) => publicationExtra(entry, 'publication-award'))
+    .filter(Boolean);
+
+  const extras = [...media, ...awards].join(' ');
+
   return `
     <article class="item publication-item">
       <div class="item-main">
@@ -367,6 +417,12 @@ function publicationItem(item) {
         ${
           details
             ? `<div class="authors">${escapeHtml(details)}</div>`
+            : ''
+        }
+
+        ${
+          showExtras && extras
+            ? `<div class="publication-extras">${extras}</div>`
             : ''
         }
 
@@ -659,10 +715,29 @@ function section({
   `;
 }
 
+function markdownPage(profile, title, current, markdown) {
+  return document(
+    profile,
+    `
+      <section class="section listing-page">
+        <header class="section-header">
+          <h1>${escapeHtml(title)}</h1>
+        </header>
+
+        <div class="blog-content">
+          ${renderMarkdown(markdown ?? '')}
+        </div>
+      </section>
+    `,
+    current,
+    title
+  );
+}
+
 export function renderHome(profile) {
   const news = sorted(profile.news ?? []).slice(0, 3);
   const blog = sorted(profile.blog ?? []).slice(0, 3);
-  const publications = sorted(profile.publications ?? []).slice(0, 10);
+  const publications = selectedPublications(profile.publications ?? []);
   const funding = sorted(profile.funding ?? []).slice(0, 5);
   const hiring = liveHiring(profile);
 
@@ -709,9 +784,9 @@ export function renderHome(profile) {
 
     ${section({
       id: 'publications',
-      title: 'Publications',
+      title: 'Selected Publications',
       items: publications,
-      renderer: publicationItem,
+      renderer: (item) => publicationItem(item, { showExtras: false }),
       allUrl: '/publications.html',
     })}
 
@@ -732,6 +807,24 @@ export function renderHome(profile) {
   `;
 
   return document(profile, body);
+}
+
+export function renderResearchPage(profile) {
+  return markdownPage(
+    profile,
+    'Research',
+    'research',
+    profile.researchMarkdown
+  );
+}
+
+export function renderTalksMediaPage(profile) {
+  return markdownPage(
+    profile,
+    'Talks & Media',
+    'talks-media',
+    profile.talksMediaMarkdown
+  );
 }
 
 export function renderNewsPage(profile) {
@@ -842,7 +935,6 @@ export function renderBlogPost(profile, post) {
   );
 }
 
-
 export function renderPublicationsPage(profile) {
   const items = sorted(profile.publications ?? []);
 
@@ -855,7 +947,7 @@ export function renderPublicationsPage(profile) {
         </header>
 
         <div class="items">
-          ${items.map(publicationItem).join('')}
+          ${items.map((item) => publicationItem(item)).join('')}
         </div>
       </section>
     `,
