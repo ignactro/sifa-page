@@ -64,6 +64,7 @@ function liveHiring(profile) {
 
 function sidebar(profile, current = '') {
   const hasNews = (profile.news ?? []).length > 0;
+  const hasBlog = (profile.blog ?? []).length > 0;
   const hasPublications = (profile.publications ?? []).length > 0;
   const hasFunding = (profile.funding ?? []).length > 0;
   const hasService = (profile.service ?? []).length > 0;
@@ -120,6 +121,14 @@ function sidebar(profile, current = '') {
             ? `<a href="/news.html" ${
                 current === 'news' ? 'aria-current="page"' : ''
               }>News</a>`
+            : ''
+        }
+
+        ${
+          hasBlog
+            ? `<a href="/blog.html" ${
+                current === 'blog' ? 'aria-current="page"' : ''
+              }>Blog</a>`
             : ''
         }
 
@@ -234,11 +243,14 @@ function document(profile, body, current = '', title = '') {
 </html>`;
 }
 
-function newsItem(item) {
-  const postUrl = item.slug
+function newsPostUrl(item) {
+  return item.slug
     ? `/news/${encodeURIComponent(item.slug)}.html`
     : '/news.html';
+}
 
+function newsItem(item) {
+  const postUrl = newsPostUrl(item);
   const body = item.html ?? escapeHtml(item.text ?? '');
 
   return `
@@ -261,6 +273,53 @@ function newsItem(item) {
         </div>
       </div>
     </article>
+  `;
+}
+
+function compactNewsCard(item) {
+  const postUrl = newsPostUrl(item);
+  const summary = stripHtml(item.html ?? item.text ?? '');
+
+  return `
+    <a class="compact-card" href="${postUrl}">
+      ${
+        item.date
+          ? `<div class="card-date">${formatDate(item.date)}</div>`
+          : ''
+      }
+
+      <div class="card-title">${escapeHtml(item.title ?? '')}</div>
+
+      ${
+        summary
+          ? `<div class="card-summary">${escapeHtml(summary)}</div>`
+          : ''
+      }
+
+      <div class="card-more">Read more →</div>
+    </a>
+  `;
+}
+
+function renderNewsBody(item) {
+  return item.html ?? (
+    item.text
+      ? `<p>${escapeHtml(item.text)}</p>`
+      : ''
+  );
+}
+
+function newsExternalLink(item) {
+  const url = safeUrl(item.url);
+
+  if (!url) return '';
+
+  return `
+    <p class="news-external-link">
+      <a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">
+        More information →
+      </a>
+    </p>
   `;
 }
 
@@ -397,6 +456,164 @@ function hiringItem(item) {
   `;
 }
 
+
+function escapeInlineMarkdown(value = '') {
+  let html = escapeHtml(value);
+
+  html = html.replace(
+    /`([^`]+)`/g,
+    '<code>$1</code>'
+  );
+
+  html = html.replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+  return html;
+}
+
+function renderMarkdown(source = '') {
+  const lines = String(source).replace(/\r\n/g, '\n').split('\n');
+  const output = [];
+  let paragraph = [];
+  let listType = null;
+  let listItems = [];
+  let inCode = false;
+  let codeLines = [];
+
+  function flushParagraph() {
+    if (!paragraph.length) return;
+    output.push(`<p>${escapeInlineMarkdown(paragraph.join(' '))}</p>`);
+    paragraph = [];
+  }
+
+  function flushList() {
+    if (!listType || !listItems.length) return;
+    output.push(
+      `<${listType}>${listItems
+        .map((item) => `<li>${escapeInlineMarkdown(item)}</li>`)
+        .join('')}</${listType}>`
+    );
+    listType = null;
+    listItems = [];
+  }
+
+  for (const line of lines) {
+    if (line.trim().startsWith('```')) {
+      flushParagraph();
+      flushList();
+
+      if (inCode) {
+        output.push(`<pre><code>${escapeHtml(codeLines.join('\n'))}</code></pre>`);
+        codeLines = [];
+        inCode = false;
+      } else {
+        inCode = true;
+      }
+      continue;
+    }
+
+    if (inCode) {
+      codeLines.push(line);
+      continue;
+    }
+
+    if (!line.trim()) {
+      flushParagraph();
+      flushList();
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,4})\s+(.+)$/);
+    if (heading) {
+      flushParagraph();
+      flushList();
+      const level = heading[1].length;
+      output.push(`<h${level}>${escapeInlineMarkdown(heading[2])}</h${level}>`);
+      continue;
+    }
+
+    const unordered = line.match(/^\s*[-*]\s+(.+)$/);
+    if (unordered) {
+      flushParagraph();
+      if (listType && listType !== 'ul') flushList();
+      listType = 'ul';
+      listItems.push(unordered[1]);
+      continue;
+    }
+
+    const ordered = line.match(/^\s*\d+\.\s+(.+)$/);
+    if (ordered) {
+      flushParagraph();
+      if (listType && listType !== 'ol') flushList();
+      listType = 'ol';
+      listItems.push(ordered[1]);
+      continue;
+    }
+
+    const quote = line.match(/^>\s?(.*)$/);
+    if (quote) {
+      flushParagraph();
+      flushList();
+      output.push(`<blockquote>${escapeInlineMarkdown(quote[1])}</blockquote>`);
+      continue;
+    }
+
+    if (/^---+$/.test(line.trim())) {
+      flushParagraph();
+      flushList();
+      output.push('<hr>');
+      continue;
+    }
+
+    paragraph.push(line.trim());
+  }
+
+  if (inCode) {
+    output.push(`<pre><code>${escapeHtml(codeLines.join('\n'))}</code></pre>`);
+  }
+
+  flushParagraph();
+  flushList();
+
+  return output.join('\n');
+}
+
+function blogPostUrl(item) {
+  return item.slug
+    ? `/blog/${encodeURIComponent(item.slug)}.html`
+    : '/blog.html';
+}
+
+function compactBlogCard(item) {
+  const postUrl = blogPostUrl(item);
+  const summary = item.summary || stripHtml(item.markdown ?? '');
+
+  return `
+    <a class="compact-card" href="${postUrl}">
+      ${
+        item.date
+          ? `<div class="card-date">${formatDate(item.date)}</div>`
+          : ''
+      }
+
+      <div class="card-title">${escapeHtml(item.title ?? '')}</div>
+
+      ${
+        summary
+          ? `<div class="card-summary">${escapeHtml(summary)}</div>`
+          : ''
+      }
+
+      <div class="card-more">Read more →</div>
+    </a>
+  `;
+}
+
 function section({
   id,
   title,
@@ -432,7 +649,8 @@ function section({
 }
 
 export function renderHome(profile) {
-  const news = sorted(profile.news ?? []).slice(0, 1);
+  const news = sorted(profile.news ?? []).slice(0, 3);
+  const blog = sorted(profile.blog ?? []).slice(0, 3);
   const publications = sorted(profile.publications ?? []).slice(0, 10);
   const funding = sorted(profile.funding ?? []).slice(0, 5);
   const hiring = liveHiring(profile);
@@ -444,13 +662,39 @@ export function renderHome(profile) {
       </div>
     </section>
 
-    ${section({
-      id: 'news',
-      title: 'News',
-      items: news,
-      renderer: newsItem,
-      allUrl: '/news.html',
-    })}
+    ${
+      news.length
+        ? `
+          <section class="section" id="news">
+            <header class="section-header">
+              <h2><a href="/news.html">News</a></h2>
+              <a class="view-all" href="/news.html">All →</a>
+            </header>
+
+            <div class="compact-grid">
+              ${news.map(compactNewsCard).join('')}
+            </div>
+          </section>
+        `
+        : ''
+    }
+
+    ${
+      blog.length
+        ? `
+          <section class="section" id="blog">
+            <header class="section-header">
+              <h2><a href="/blog.html">Blog</a></h2>
+              <a class="view-all" href="/blog.html">All →</a>
+            </header>
+
+            <div class="compact-grid">
+              ${blog.map(compactBlogCard).join('')}
+            </div>
+          </section>
+        `
+        : ''
+    }
 
     ${section({
       id: 'publications',
@@ -499,6 +743,94 @@ export function renderNewsPage(profile) {
     'News'
   );
 }
+
+export function renderNewsPost(profile, item) {
+  const body = `
+    <article class="section listing-page blog-post">
+      <a class="back-link" href="/news.html">← News</a>
+
+      <header class="blog-post-header">
+        <h1>${escapeHtml(item.title ?? '')}</h1>
+        ${
+          item.date
+            ? `<div class="blog-post-date">${formatDate(item.date)}</div>`
+            : ''
+        }
+      </header>
+
+      <div class="blog-content">
+        ${renderNewsBody(item)}
+        ${newsExternalLink(item)}
+      </div>
+    </article>
+  `;
+
+  return document(
+    profile,
+    body,
+    'news',
+    item.title ?? 'News'
+  );
+}
+
+export function renderBlogPage(profile) {
+  const items = sorted(profile.blog ?? []);
+
+  return document(
+    profile,
+    `
+      <section class="section listing-page">
+        <header class="section-header">
+          <h1>Blog</h1>
+        </header>
+
+        ${
+          items.length
+            ? `<div class="blog-list">${items.map(compactBlogCard).join('')}</div>`
+            : '<p class="empty-state">No posts yet.</p>'
+        }
+      </section>
+    `,
+    'blog',
+    'Blog'
+  );
+}
+
+export function renderBlogPost(profile, post) {
+  const body = `
+    <article class="section listing-page blog-post">
+      <a class="back-link" href="/blog.html">← Blog</a>
+
+      <header class="blog-post-header">
+        <h1>${escapeHtml(post.title ?? '')}</h1>
+
+        ${
+          post.date
+            ? `<div class="blog-post-date">${formatDate(post.date)}</div>`
+            : ''
+        }
+
+        ${
+          post.summary
+            ? `<p class="blog-post-summary">${escapeHtml(post.summary)}</p>`
+            : ''
+        }
+      </header>
+
+      <div class="blog-content">
+        ${renderMarkdown(post.markdown ?? '')}
+      </div>
+    </article>
+  `;
+
+  return document(
+    profile,
+    body,
+    'blog',
+    post.title ?? 'Blog'
+  );
+}
+
 
 export function renderPublicationsPage(profile) {
   const items = sorted(profile.publications ?? []);
