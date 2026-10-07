@@ -308,47 +308,97 @@ footer {
   .sidebar {
     position: static;
     height: auto;
-    padding: 24px 22px 20px;
+    padding: 20px 22px 14px;
     border-right: 0;
     border-bottom: 1px solid var(--rule);
   }
 
+  /*
+   * Mobile-only header layout. The desktop sidebar remains untouched.
+   *
+   *   avatar | name
+   *   avatar | headline
+   *   avatar | Scholar / ORCID
+   *   navigation + theme toggle
+   */
   .identity {
     display: grid;
-    grid-template-columns: 70px 1fr;
-    column-gap: 18px;
-    margin-bottom: 18px;
+    grid-template-columns: 76px minmax(0, 1fr);
+    grid-template-areas:
+      "avatar name"
+      "avatar headline"
+      "avatar links"
+      "nav nav";
+    column-gap: 14px;
+    row-gap: 0;
+    margin: 0;
+  }
+
+  .identity > a:first-child {
+    grid-area: avatar;
+    align-self: start;
   }
 
   .avatar {
-    width: 70px;
-    height: 70px;
+    width: 76px;
+    height: 76px;
     margin: 0;
-    grid-row: 1 / span 2;
   }
 
   .name {
-    font-size: 22px;
+    grid-area: name;
     align-self: end;
+    margin: 0 0 2px;
+    font-size: 23px;
+    line-height: 1.15;
   }
 
   .headline {
-    font-size: 15px;
+    grid-area: headline;
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .profile-links {
+    grid-area: links;
+    align-self: start;
+    margin-top: 5px;
+    gap: 12px;
+  }
+
+  .profile-links a {
+    font-size: 10px;
   }
 
   .nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px 20px;
-    padding-top: 14px;
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: start;
+    gap: 2px 18px;
+    margin-top: 14px;
+    padding: 10px 46px 0 0;
+    border-top: 1px solid var(--rule);
   }
 
   .nav a {
-    font-size: 16px;
+    padding: 1px 0;
+    font-size: 15px;
+    line-height: 1.4;
   }
 
   .theme-toggle {
-    margin-top: 16px;
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: end;
+    align-self: start;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    margin: 10px 0 0;
+    font-size: 16px;
   }
 
   .main {
@@ -362,7 +412,7 @@ footer {
   }
 
   .about-section {
-    padding-top: 30px;
+    padding-top: 26px;
   }
 
   h1 {
