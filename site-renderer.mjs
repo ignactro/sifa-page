@@ -92,8 +92,19 @@ function sidebar(profile, current = '') {
         </a>
 
       ${
-        profile.headline
-          ? `<div class="headline">${escapeHtml(profile.headline)}</div>`
+        profile.headline || profile.affiliation
+          ? `<div class="headline">
+               ${
+                 profile.headline
+                   ? `<span class="headline-role">${escapeHtml(profile.headline)}</span>`
+                   : ''
+               }
+               ${
+                 profile.affiliation
+                   ? `<span class="headline-affiliation">${escapeHtml(profile.affiliation)}</span>`
+                   : ''
+               }
+             </div>`
           : ''
       }
 
@@ -103,7 +114,7 @@ function sidebar(profile, current = '') {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Google Scholar
+          G'Scholar
         </a>
 
         <a
