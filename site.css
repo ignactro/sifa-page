@@ -98,6 +98,11 @@ a:hover {
   line-height: 1.5;
 }
 
+.headline-role,
+.headline-affiliation {
+  display: block;
+}
+
 .profile-links {
   margin-top: 8px;
   display: flex;
@@ -306,7 +311,7 @@ footer {
   }
 
   .sidebar {
-    position: static;
+    position: relative;
     height: auto;
     padding: 20px 22px 14px;
     border-right: 0;
@@ -374,30 +379,43 @@ footer {
 
   .nav {
     grid-area: nav;
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    justify-content: start;
-    gap: 2px 18px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
     margin-top: 14px;
-    padding: 10px 46px 0 0;
+    padding: 10px 0 0;
     border-top: 1px solid var(--rule);
+  }
+
+  /*
+   * Five menu items or fewer stay on one line. If a sixth item (or more)
+   * is present, switch automatically to a compact four-column grid:
+   * 4 + 2 for six items, 4 + 3 for seven, 4 + 4 for eight.
+   */
+  .nav:has(a:nth-child(6)) {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: start;
+    gap: 2px clamp(14px, 5vw, 24px);
   }
 
   .nav a {
     padding: 1px 0;
     font-size: 15px;
     line-height: 1.4;
+    white-space: nowrap;
   }
 
   .theme-toggle {
-    grid-column: 2;
-    grid-row: 4;
-    justify-self: end;
-    align-self: start;
-    z-index: 1;
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    z-index: 2;
     width: 32px;
     height: 32px;
-    margin: 10px 0 0;
+    margin: 0;
     font-size: 16px;
   }
 
