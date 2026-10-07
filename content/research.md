@@ -18,6 +18,6 @@ My work in this area has been funded through [AP4L](https://gtr.ukri.org/project
 
 I use online activity to study social and economic behaviour. This includes work on Nextdoor, where we examine how local online activity relates to neighbourhood inequality and crime [[ICWSM 2023](https://doi.org/10.1609/icwsm.v17i1.22155)]. I am currently extending this work by comparing what politicians discuss online and in Parliament with what their constituents discuss on Nextdoor.
 
-I have supported this work with a grant studying the relationship between online discussions and crime is supported by the [Neighbourhood Signals](https://www.rephrain.ac.uk/neighbourhood-signals/).
+I have supported this work with a grant studying the relationship between online discussions and crime is supported by the [Neighbourhood Signals](https://www.rephrain.ac.uk/neighbourhood-signals/) project, funded through the UK Government's Safer Streets framework.
 
 
