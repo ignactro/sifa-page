@@ -96,12 +96,12 @@ function sidebar(profile, current = '') {
           ? `<div class="headline">
                ${
                  profile.headline
-                   ? `<span class="headline-role">${escapeHtml(profile.headline)}</span>`
+                   ? `<div class="headline-role">${escapeHtml(profile.headline)}</div>`
                    : ''
                }
                ${
                  profile.affiliation
-                   ? `<span class="headline-affiliation">${escapeHtml(profile.affiliation)}</span>`
+                   ? `<div class="headline-affiliation">${escapeHtml(profile.affiliation)}</div>`
                    : ''
                }
              </div>`
