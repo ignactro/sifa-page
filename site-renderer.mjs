@@ -130,7 +130,7 @@ function sidebar(profile, current = '') {
           rel="noopener noreferrer"
         >
           G'Scholar
-        </a>#
+        </a>
 
         <a
           href="https://dblp.org/pid/99/11343"
