@@ -130,7 +130,16 @@ function sidebar(profile, current = '') {
           rel="noopener noreferrer"
         >
           G'Scholar
+        </a>#
+
+        <a
+          href="https://dblp.org/pid/99/11343"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DBLP
         </a>
+      
 
         <a
           href="https://orcid.org/0000-0002-7739-6184"
@@ -140,6 +149,8 @@ function sidebar(profile, current = '') {
           ORCID
         </a>
       </div>
+
+      
 
       <nav class="nav">
         <a href="/research.html" ${
