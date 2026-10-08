@@ -1,6 +1,13 @@
 
 [
   {
+    "category": "Conference Organisation",
+    "title": "Dagstuhl Seminar 27201 – Rethinking Internet Resilience in a Post-Global Era",
+    "role": "Co-organiser",
+    "years": "2027",
+    "url": "https://www.dagstuhl.de/27201"
+  }
+  {
     "category": "Technical Programme Committees",
     "title": "ACM SIGMETRICS",
     "role": "Senior Program Committee",
