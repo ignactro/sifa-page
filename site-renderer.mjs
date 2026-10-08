@@ -73,8 +73,7 @@ function selectedPublications(items = []) {
     ).slice(0, 10);
   }
 
-  // Until selected flags are added to publications.json,
-  // treat the 10 most recent publications as selected.
+  // Fallback for publications data without explicit selected flags.
   return sorted(items).slice(0, 10);
 }
 
@@ -374,23 +373,39 @@ function publicationExtra(entry, className = '') {
     : `<span${classes}>[${label}]</span>`;
 }
 
+function formatPublicationAuthors(authors) {
+  const names = String(authors ?? '')
+    .split(',')
+    .map((name) => name.trim())
+    .filter(Boolean);
+
+  if (names.length <= 1) return names[0] ?? '';
+  if (names.length === 2) return `${names[0]} and ${names[1]}`;
+  return `${names.slice(0, -1).join(', ')} and ${names.at(-1)}`;
+}
+
 function publicationItem(item, { showExtras = true } = {}) {
   const url = safeUrl(item.url);
   const title = escapeHtml(item.title ?? '');
 
-  const authorsAndVenue = [
-    item.authors,
-    item.venue,
-  ]
-    .filter(Boolean)
-    .join(' · ');
+  const authors = formatPublicationAuthors(item.authors);
+  const venue = String(item.venue ?? '').trim();
+  const venueText = venue
+    ? venue.toLowerCase().startsWith('arxiv')
+      ? venue
+      : `In ${venue}`
+    : '';
 
-  const details = [
-    authorsAndVenue,
-    item.year ? `(${item.year})` : null,
+
+  const bibliographicLine = [
+    authors ? `${authors}.` : null,
+    venueText || null,
+    item.year ? `(${item.year}).` : null,
   ]
     .filter(Boolean)
     .join(' ');
+
+  const details = bibliographicLine;
 
   const media = (item.media ?? [])
     .map((entry) => publicationExtra(entry))
@@ -786,7 +801,7 @@ export function renderHome(profile) {
       id: 'publications',
       title: 'Selected Publications',
       items: publications,
-      renderer: (item) => publicationItem(item, { showExtras: false }),
+      renderer: (item) => publicationItem(item),
       allUrl: '/publications.html',
     })}
 
