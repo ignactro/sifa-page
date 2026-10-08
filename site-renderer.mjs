@@ -1009,12 +1009,13 @@ export function renderFundingPage(profile) {
 
 export function renderServicePage(profile) {
   const items = profile.service ?? [];
-  const categories = [
-    'Technical Programme Committees',
-    'Journals',
-    'Grant Reviewing',
-    'External Examining',
-  ];
+const categories = [
+  'Conference Organisation',
+  'Technical Programme Committees',
+  'Journal Reviewing',
+  'Grant Reviewing',
+  'External Examining',
+];
 
   const body = categories
     .map((category) =>
