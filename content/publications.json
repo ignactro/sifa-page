@@ -434,7 +434,8 @@
     "url": "https://qmro.qmul.ac.uk/handle/123456789/79960",
     "awards": [
       {
-        "label": "IETF/IRTF Applied Networking Research Prize 2023"
+        "label": "IETF/IRTF Applied Networking Research Prize 2023",
+        "url": "https://www.ietf.org/blog/anrp-2023/"
       }
     ],
     "selected": true
