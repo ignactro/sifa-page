@@ -307,7 +307,7 @@ h2 {
 }
 
 .service-group {
-  margin-top: 34px;
+  margin-top: 30px;
 }
 
 .service-group:first-of-type {
@@ -315,8 +315,22 @@ h2 {
 }
 
 .service-group h2 {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   font-size: 22px;
+}
+
+.service-group .service-item {
+  margin: 0 0 9px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.service-group .service-item:last-child {
+  margin-bottom: 0;
+}
+
+.service-group .service-item strong {
+  font-weight: 600;
 }
 
 .listing-page {
