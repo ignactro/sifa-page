@@ -1,5 +1,6 @@
+
 [
-    {
+  {
     "category": "Technical Programme Committees",
     "title": "ACM SIGMETRICS",
     "role": "Senior Program Committee",
@@ -51,7 +52,7 @@
     "category": "Technical Programme Committees",
     "title": "ACM/IRTF Applied Networking Research Workshop (ANRW)",
     "role": "Program Committee",
-    "years": "2025-present"
+    "years": "2025–present"
   },
   {
     "category": "Technical Programme Committees",
@@ -64,6 +65,66 @@
     "title": "IEEE ICNP",
     "role": "Technical Program Committee",
     "years": "2017–2021"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "ACM/IRTF Applied Networking Research Workshop (ANRW)",
+    "role": "General Chair",
+    "years": "2024"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "IEEE ICNP",
+    "role": "Treasurer",
+    "years": "2023"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "ACM SIGCOMM",
+    "role": "Virtual Experience Chair",
+    "years": "2022"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "IEEE ICNP",
+    "role": "Publicity Chair",
+    "years": "2021–2022"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "ACM Internet Measurement Conference (IMC)",
+    "role": "Online Experience Chair",
+    "years": "2021"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "IEEE ICNP",
+    "role": "Treasurer",
+    "years": "2020"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "ACM ICN Information-Centric Economic, Societal and Governance Workshop",
+    "role": "Workshop Co-Chair",
+    "years": "2020"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "ACM SIGCOMM",
+    "role": "Publicity Chair",
+    "years": "2018"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "ACM Internet Measurement Conference (IMC)",
+    "role": "Treasurer & Social Event Chair",
+    "years": "2017"
+  },
+  {
+    "category": "Conference Organisation",
+    "title": "COMSNETS",
+    "role": "Publicity Chair",
+    "years": "2014"
   },
   {
     "category": "Journals",
