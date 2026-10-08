@@ -500,7 +500,11 @@ function fundingItem(item) {
 function serviceItem(item) {
   const title = escapeHtml(item.title ?? '');
   const role = escapeHtml(item.role ?? '');
-  const years = escapeHtml(item.years ?? '');
+
+  const currentYear = new Date().getFullYear();
+  const years = escapeHtml(
+    (item.years ?? '').replace(/\bpresent\b/gi, String(currentYear))
+  );
 
   return `
     <p class="service-item">
