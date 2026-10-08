@@ -41,7 +41,7 @@
     "authors": "Yangjun Zhang, Stephen McQuistin, Vanja Karan, Hugo Ramirez-Centeno, Colin Perkins, Gareth Tyson, Ignacio Castro",
     "venue": "ACM/IRTF Applied Networking Research Workshop (ANRW)",
     "year": "2025",
-    "selected": true,
+    "selected": false,
     "url": "https://doi.org/10.1145/3744200.3744757"
   },
   {
@@ -122,7 +122,7 @@
     "venue": "Frontiers in Psychology",
     "year": "2024",
     "url": "https://qmro.qmul.ac.uk/handle/123456789/94939",
-    "selected": true
+    "selected": false
   },
   {
     "date": "2024-01-01",
@@ -203,7 +203,7 @@
     "venue": "arXiv preprint arXiv:2407.03255",
     "year": "2024",
     "url": "https://arxiv.org/abs/2407.03255",
-    "selected": false
+    "selected": true
   },
   {
     "date": "2024-01-01",
@@ -437,7 +437,7 @@
         "label": "IETF/IRTF Applied Networking Research Prize 2023"
       }
     ],
-    "selected": false
+    "selected": true
   },
   {
     "date": "2022-01-01",
