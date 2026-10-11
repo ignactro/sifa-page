@@ -769,7 +769,7 @@ export function renderHome(profile) {
   const blog = sorted(profile.blog ?? []).slice(0, 3);
   const publications = selectedPublications(profile.publications ?? []);
   const funding = sorted(profile.funding ?? []).slice(0, 5);
-  const hiring = liveHiring(profile);
+  const hiring = liveHiring(profile).slice(0,10);
 
   const body = `
     <section class="section about-section">
