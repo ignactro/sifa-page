@@ -457,44 +457,47 @@ function publicationItem(item, { showExtras = true } = {}) {
   `;
 }
 
+function fundingPostUrl(item) {
+  return item.slug
+    ? `/funding/${encodeURIComponent(item.slug)}.html`
+    : '/funding.html';
+}
+
 function fundingItem(item) {
-  const url = safeUrl(item.url);
   const title = escapeHtml(item.title ?? '');
-  const description = item.description ?? item.text ?? '';
+  const description = stripHtml(item.description ?? item.text ?? '');
+  const excerpt = description.length > 320 ? `${description.slice(0, 317).trimEnd()}…` : description;
 
   return `
     <article class="item funding-item">
       <div class="item-main">
-
-        <div class="funding-title">
-          ${
-            url
-              ? `<a href="${escapeHtml(url)}">${title}</a>`
-              : title
-          }
-        </div>
-
-        ${
-          item.funder || item.years
-            ? `<div class="metadata">
-                 ${escapeHtml(
-                   [item.funder, item.years]
-                     .filter(Boolean)
-                     .join(' · ')
-                 )}
-               </div>`
-            : ''
-        }
-
-        ${
-          description
-            ? `<div class="item-description">${description}</div>`
-            : ''
-        }
-
+        <div class="funding-title"><a href="${fundingPostUrl(item)}">${title}</a></div>
+        ${item.funder || item.years
+          ? `<div class="metadata">${escapeHtml([item.funder, item.years].filter(Boolean).join(' · '))}</div>`
+          : ''}
+        ${excerpt ? `<div class="item-description">${escapeHtml(excerpt)}</div>` : ''}
       </div>
     </article>
   `;
+}
+
+export function renderFundingPost(profile, item) {
+  const url = safeUrl(item.url);
+  return document(profile, `
+    <article class="section listing-page blog-post">
+      <a class="back-link" href="/funding.html">← Funding</a>
+      <header class="blog-post-header">
+        <h1>${escapeHtml(item.title ?? '')}</h1>
+        ${item.funder || item.years
+          ? `<div class="metadata">${escapeHtml([item.funder, item.years].filter(Boolean).join(' · '))}</div>`
+          : ''}
+      </header>
+      <div class="blog-content">
+        ${item.description ?? item.text ?? ''}
+        ${url ? `<p><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">More information →</a></p>` : ''}
+      </div>
+    </article>
+  `, 'funding', item.title ?? 'Funding');
 }
 
 function serviceItem(item) {
@@ -526,33 +529,54 @@ function serviceGroup(title, items) {
   `;
 }
 
+function hiringPostUrl(item) {
+  return item.slug
+    ? `/hiring/${encodeURIComponent(item.slug)}.html`
+    : '/hiring.html';
+}
+
 function hiringItem(item) {
-  const url = safeUrl(item.url);
   const title = escapeHtml(item.title ?? '');
+  const summary = stripHtml(item.text ?? '');
+  const excerpt = summary.length > 320 ? `${summary.slice(0, 317).trimEnd()}…` : summary;
 
   return `
     <article class="item hiring-item">
       <div class="item-main">
-
-        <div class="hiring-title">
-          ${
-            url
-              ? `<a href="${escapeHtml(url)}">${title}</a>`
-              : title
-          }
-        </div>
-
-        ${
-          item.text
-            ? `<div class="item-description">${item.text}</div>`
-            : ''
-        }
-
+        <div class="hiring-title"><a href="${hiringPostUrl(item)}">${title}</a></div>
+        ${item.date ? `<div class="item-date">${formatDate(item.date)}</div>` : ''}
+        ${excerpt ? `<div class="item-description">${escapeHtml(excerpt)}</div>` : ''}
       </div>
     </article>
   `;
 }
 
+export function renderHiringPage(profile) {
+  const items = sorted(profile.hiring ?? []);
+  return document(profile, `
+    <section class="section listing-page">
+      <header class="section-header"><h1>Hiring</h1></header>
+      <div class="items">${items.map(hiringItem).join('')}</div>
+    </section>
+  `, 'hiring', 'Hiring');
+}
+
+export function renderHiringPost(profile, item) {
+  const url = safeUrl(item.url);
+  return document(profile, `
+    <article class="section listing-page blog-post">
+      <a class="back-link" href="/hiring.html">← Hiring</a>
+      <header class="blog-post-header">
+        <h1>${escapeHtml(item.title ?? '')}</h1>
+        ${item.date ? `<div class="blog-post-date">${formatDate(item.date)}</div>` : ''}
+      </header>
+      <div class="blog-content">
+        ${item.text ?? ''}
+        ${url ? `<p><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">More information →</a></p>` : ''}
+      </div>
+    </article>
+  `, 'hiring', item.title ?? 'Hiring');
+}
 
 function escapeInlineMarkdown(value = '') {
   let html = escapeHtml(value);
@@ -769,7 +793,7 @@ export function renderHome(profile) {
   const blog = sorted(profile.blog ?? []).slice(0, 3);
   const publications = selectedPublications(profile.publications ?? []);
   const funding = sorted(profile.funding ?? []).slice(0, 5);
-  const hiring = liveHiring(profile).slice(0,10);
+  const hiring = liveHiring(profile);
 
   const body = `
     <section class="section about-section">
@@ -833,6 +857,7 @@ export function renderHome(profile) {
       title: 'Hiring',
       items: hiring,
       renderer: hiringItem,
+      allUrl: '/hiring.html',
     })}
   `;
 

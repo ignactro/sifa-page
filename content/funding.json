@@ -5,7 +5,8 @@
     "url": "https://cordis.europa.eu/project/id/101311731",
     "funder": "Horizon Europe MSCA · Grant 101311731 · €4.53M",
     "years": "2027–2030",
-    "description": "PI at QMUL. A Doctoral Network developing resilient Internet infrastructure across terrestrial, satellite and submarine systems, alongside cybersecurity, governance and standardisation."
+    "description": "PI at QMUL. A Doctoral Network developing resilient Internet infrastructure across terrestrial, satellite and submarine systems, alongside cybersecurity, governance and standardisation.",
+    "slug": "resilious"
   },
   {
     "date": "2025-12-01",
@@ -13,7 +14,8 @@
     "url": "https://www.rephrain.ac.uk/neighbourhood-signals/",
     "funder": "UKRI REPHRAIN · £23.8K",
     "years": "2025–2026",
-    "description": "PI. Studies whether hyperlocal online discussions can provide early indicators of offline crime by linking longitudinal social-platform data with police-reported crime and socio-demographic data."
+    "description": "PI. Studies whether hyperlocal online discussions can provide early indicators of offline crime by linking longitudinal social-platform data with police-reported crime and socio-demographic data.",
+    "slug": "neighbourhood-signals"
   },
   {
     "date": "2024-01-01",
@@ -21,7 +23,8 @@
     "url": "https://www.rephrain.ac.uk/fedi-verse-impact-booster-award-project/",
     "funder": "UKRI REPHRAIN · £20K",
     "years": "2024",
-    "description": "PI. Developed an observatory providing researchers and policymakers with data and tools for studying harms, moderation and other dynamics across the Fediverse."
+    "description": "PI. Developed an observatory providing researchers and policymakers with data and tools for studying harms, moderation and other dynamics across the Fediverse.",
+    "slug": "fediverse-observatory"
   },
   {
     "date": "2022-05-01",
@@ -29,7 +32,8 @@
     "url": "https://www.rephrain.ac.uk/",
     "funder": "UKRI REPHRAIN · £81K",
     "years": "2022–2023",
-    "description": "PI. Studied content moderation in decentralised social networks and developed approaches for moderation across independent servers, including federated learning."
+    "description": "PI. Studied content moderation in decentralised social networks and developed approaches for moderation across independent servers, including federated learning.",
+    "slug": "dsnmod"
   },
   {
     "date": "2022-03-01",
@@ -37,7 +41,8 @@
     "url": "https://gtr.ukri.org/projects?ref=EP/W032473/1",
     "funder": "UKRI · EP/W032473/1 · £2.79M",
     "years": "2022–2025",
-    "description": "Co-I. A multidisciplinary project developing privacy-enhancing technologies to protect people from online harms during major life transitions."
+    "description": "Co-I. A multidisciplinary project developing privacy-enhancing technologies to protect people from online harms during major life transitions.",
+    "slug": "ap4l"
   },
   {
     "date": "2020-01-01",
@@ -45,6 +50,7 @@
     "url": "https://sodestream.github.io/",
     "funder": "EPSRC · EP/S033564/1 + EP/S036075/1 · £1.16M",
     "years": "2020–2024",
-    "description": "Co-I. Studied decision-making in Internet standardisation using natural language processing, social network analysis and Internet measurement."
+    "description": "Co-I. Studied decision-making in Internet standardisation using natural language processing, social network analysis and Internet measurement.",
+    "slug": "sodestream"
   }
 ]

@@ -12,6 +12,9 @@ import {
   renderNewsPost,
   renderPublicationsPage,
   renderFundingPage,
+  renderFundingPost,
+  renderHiringPage,
+  renderHiringPost,
   renderServicePage,
   renderBlogPage,
   renderBlogPost,
@@ -148,6 +151,8 @@ async function main() {
   await mkdir(OUT, { recursive: true });
   await mkdir(`${OUT}/news`, { recursive: true });
   await mkdir(`${OUT}/blog`, { recursive: true });
+  await mkdir(`${OUT}/hiring`, { recursive: true });
+  await mkdir(`${OUT}/funding`, { recursive: true });
 
   cpSync('assets', `${OUT}/assets`, { recursive: true });
 
@@ -164,6 +169,7 @@ async function main() {
     writeFile(`${OUT}/blog.html`, renderBlogPage(profile)),
     writeFile(`${OUT}/publications.html`, renderPublicationsPage(profile)),
     writeFile(`${OUT}/funding.html`, renderFundingPage(profile)),
+    writeFile(`${OUT}/hiring.html`, renderHiringPage(profile)),
     writeFile(`${OUT}/service.html`, renderServicePage(profile)),
   ];
 
@@ -175,6 +181,20 @@ async function main() {
         `${OUT}/news/${encodeURIComponent(item.slug)}.html`,
         renderNewsPost(profile, item)
       )
+    );
+  }
+
+  for (const item of funding) {
+    if (!item.slug) continue;
+    pageWrites.push(
+      writeFile(`${OUT}/funding/${encodeURIComponent(item.slug)}.html`, renderFundingPost(profile, item))
+    );
+  }
+
+  for (const item of hiring) {
+    if (!item.slug) continue;
+    pageWrites.push(
+      writeFile(`${OUT}/hiring/${encodeURIComponent(item.slug)}.html`, renderHiringPost(profile, item))
     );
   }
 
