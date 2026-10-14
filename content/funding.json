@@ -52,14 +52,5 @@
     "years": "2020–2024",
     "description": "Co-I. Studied decision-making in Internet standardisation using natural language processing, social network analysis and Internet measurement.",
     "slug": "sodestream"
-  },
-{
-  "date": "2025-11-03",
-  "title": "Neighbourhood Signals: Online Discussions and Crime",
-  "url": "https://www.rephrain.ac.uk/neighbourhood-signals/",
-  "funder": "UKRI REPHRAIN · £23.8K",
-  "years": "2025–2026",
-  "description": "PI. This project investigates whether hyperlocal online discussions can provide early indicators of offline crime, linking longitudinal Nextdoor data with police-recorded crime and socio-demographic data.",
-  "slug": "crime-nd"
-}
+  }
 ]
