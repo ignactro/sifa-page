@@ -22,5 +22,30 @@
     "text": "Our paper ‘FediGuard: Decentralized Content Moderation for the Fediverse’, by Jiahui He, Haris Bin Zia, Ignacio Castro, Peixian Zhang, Yupeng He and Gareth Tyson, has been accepted at ACM SIGMETRICS 2027. The work examines decentralised content moderation in the Fediverse and proposes FediGuard to support moderation across independently operated servers.",
     "url": "https://www.sigmetrics.org/sigmetrics2027/",
     "status": "live"
+  },
+  [
+  {
+    "date": "2026-05-17",
+    "slug": "dagstuhl-internet-resilience-2027",
+    "title": "Dagstuhl Seminar on Internet resilience",
+    "text": "I am co-organising Dagstuhl Seminar 27201, ‘Rethinking Internet Resilience in a Post-Global Era’, with Theophilus A. Benson, Jane R. Coffin and Dirk Kutscher. The seminar brings together researchers, operators, industry practitioners, economists and policy experts to examine Internet resilience by looking at its infrastructure and its concentration, as well as its governance.",
+    "url": "https://www.dagstuhl.de/27201",
+    "status": "live"
+  },
+  {
+    "date": "2025-11-03",
+    "slug": "neighbourhood-signals-rephrain",
+    "title": "Neighbourhood Signals awarded REPHRAIN Safer Streets funding",
+    "html": "Our project ‘Neighbourhood Signals: Online Discussions and Crime’, with Waleed Iqbal, was awarded £23,794 through the REPHRAIN Safer Streets programme. The project investigates whether hyperlocal online discussions can provide signals of subsequent offline crime by linking longitudinal Nextdoor data with police-recorded crime and socio-demographic data.",
+    "url": "https://www.rephrain.ac.uk/neighbourhood-signals/",
+    "status": "live"
+  },
+  {
+    "date": "2026-09-10",
+    "slug": "eurocrim-2026-neighbourhood-signals",
+    "title": "Neighbourhood Signals at Eurocrim 2026",
+    "text": "I was invited to Eurocrim 2026 in Warsaw to discuss our work on the relationship between hyperlocal online discussions and offline crime. I presented ‘Neighbourhood Signals: Investigating Hyperlocal Online Discussions as Indicators of Police-recorded Crime’ as part of the panel ‘Reconceptualising Crime in a Hybrid World: The Blurry Intersection between Online and Offline Harms’, and also took part in a roundtable discussing the broader implications of the findings.",
+    "url": "https://eurocrim2026.com/scientific-programme",
+    "status": "live"
   }
 ]
