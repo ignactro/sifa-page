@@ -36,7 +36,7 @@ jobs:
       # quiet profile rather than for a real regression.
       - name: Verify build output
         run: |
-          for f in dist/index.html dist/style.css; do
+          for f in dist/index.html dist/site.css; do
             if [ ! -s "$f" ]; then
               echo "::error::expected $f to exist and be non-empty" >&2
               exit 1
