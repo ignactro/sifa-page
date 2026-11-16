@@ -6,7 +6,7 @@
   "venue": "ICWSM, 2026",
   "url": "",
   "selected": true
-}
+  },
   {
   "date": "2026-11-16",
   "title": "Which Linear Transformations Does Attention Actually Need? Necessity and Sufficiency in Scaled Dot-Product Attention",
@@ -14,7 +14,7 @@
   "venue": "EACL, 2026",
   "url": "",
   "selected": false
-}
+  },
   {
     "date": "2026-08-28",
     "title": "CG-TTRL: Context-Guided Test-Time Reinforcement Learning for On-Device Large Language Models",
