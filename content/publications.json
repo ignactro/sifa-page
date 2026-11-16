@@ -1,5 +1,21 @@
 [
   {
+  "date": "2026-11-16",
+  "title": "From Parliament to Pavement: Comparing UK Parliamentary and Neighbourhood Discussions in the UK",
+  "authors": "Angel Merino, Waleed Iqbal, Ignacio Castro",
+  "venue": "ICWSM, 2026",
+  "url": "",
+  "selected": true
+}
+  {
+  "date": "2026-11-16",
+  "title": "Which Linear Transformations Does Attention Actually Need? Necessity and Sufficiency in Scaled Dot-Product Attention",
+  "authors": "Peyman Hosseini, Mehran Hosseini, Ignacio Castro, Matthew Purver",
+  "venue": "EACL, 2026",
+  "url": "",
+  "selected": false
+}
+  {
     "date": "2026-08-28",
     "title": "CG-TTRL: Context-Guided Test-Time Reinforcement Learning for On-Device Large Language Models",
     "authors": "Peyman Hosseini, Ondrej Bohdal, Taha Ceritli, Ignacio Castro, Matthew Purver, Mete Ozay, Umberto Michieli",
