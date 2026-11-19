@@ -1,10 +1,17 @@
 
 [
   {
+  "date": "2026-11-19",
+  "title": "RESILIOUS PhD positions now open!",
+  "text": "Applications are now open for the 15 PhD positions in the MSCA Doctoral Network RESILIOUS, which brings together researchers and industry partners across Europe to investigate Internet resilience. I am recruiting three PhD students at QMUL, approaching Internet resilience from different perspectives: <a href=\"https://recruitment.resilious.eu/positions/DC03\">Internet infrastructure (DC03)</a>, focusing on networking and Internet measurements; <a href=\"https://recruitment.resilious.eu/positions/DC15\">Internet governance (DC15)</a>, using natural language processing and computational social science to study how institutions (e.g., IETF) and their decisions affect Internet resilience; and <a href=\"https://recruitment.resilious.eu/positions/DC14\">Economics of Internet standardisation (DC14)</a>, examining how competition, economic incentives and innovation shape Internet standards and governance. The first two positions are in Computer Science, while the third is based in QMUL's School of Economics and Finance, in collaboration with <a href=\"https://www.qmul.ac.uk/sef/staff/konstantinoszachariadis.html\">Kostas Zachariadis</a>. Applications are welcome from candidates worldwide, subject to MSCA eligibility requirements. The deadline is the end of December 2026. For full details and to apply, see the <a href=\"https://recruitment.resilious.eu/\">RESILIOUS recruitment website</a>.",
+  "status": "live",
+  "slug": "resilious-phd-recruitment-open"
+},
+  {
     "date": "2026-10-06",
     "title": "3 PhD positions opening at QMUL in early 2027",
     "text": "I will be recruiting three PhD students in early 2027. I am particularly looking for candidates working on Internet measurement, standardisation, governance and/or its economics. For examples of my work in these areas, see my <a href=\"https://ignacio-castro.uk/research\">research interests</a> and the IRTF <a href=\"https://datatracker.ietf.org/rg/rasprg/about/\">RASP Research Group</a>. I am also open to discussing interesting ideas outside this scope. If you would like to explore potential opportunities, get in touch.",
-    "status": "live",
+    "status": "",
     "slug": "phd-positions-2027"
   },
   {
