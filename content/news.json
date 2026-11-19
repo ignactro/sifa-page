@@ -6,13 +6,13 @@
   "status": "live",
   "slug": "resilious-phd-recruitment-open"
 },
-  {
-   "date": "2026-11-16",
-   "slug": "icwsm-2027-paper",
-   "title": "Paper accepted at ICWSM 2027",
-   "text": "Our paper ‘<i>From Parliament to Pavement: Comparing UK Parliamentary and Neighbourhood Discussions in the UK</i>’ has been accepted at <a href=\"https://icwsm.org/2027/\">ICWSM 2027</a>. We compare over 436,000 parliamentary interventions with 3.7 million Mextdoor neighbourhood posts across all 650 UK constituencies to examine how closely politicians and citizens discuss the same issues. We find that alignment is mostly driven by national rather than local concerns, with differences associated with political roles and regional socioeconomic conditions. The paper is joint work with <a href=\"https://researchportal.uc3m.es/display/inv47570\">Angel Merino</a> (UC3M), who carried out much of the research during his visit to QMUL, and Waleed Iqbal (Northeastern University).",
-   "status": "live"
-  },
+{
+  "date": "2026-11-16",
+  "slug": "icwsm-2027-paper",
+  "title": "Paper accepted at ICWSM 2027",
+  "text": "Our paper ‘From Parliament to Pavement: Comparing Parliamentary and Neighbourhood Discussions in the UK’ has been accepted at ICWSM 2027. We compare over 436,000 parliamentary interventions with 3.7 million Nextdoor neighbourhood posts across all 650 UK constituencies to examine how closely politicians and citizens discuss the same issues. We find that alignment is mostly driven by national rather than local concerns, with differences associated with political roles and regional socioeconomic conditions. The paper is joint work with Angel Merino (UC3M), who carried out much of the research during his visit to QMUL, and Waleed Iqbal (Northeastern University).",
+  "status": "live"
+},
   {
     "date": "2026-10-06",
     "slug": "resilious-awarded",
