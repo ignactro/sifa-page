@@ -1,5 +1,11 @@
 [
-  
+  {
+  "date": "2026-11-19",
+  "title": "3 PhD positions at QMUL – applications now open!",
+  "text": "The <a href=\"https://recruitment.resilious.eu/\">RESILIOUS recruitment portal</a> is now live! I am recruiting three PhD students at QMUL to investigate Internet resilience from complementary perspectives: <a href=\"https://recruitment.resilious.eu/positions/DC03\">Internet infrastructure and networking (DC03)</a>, focusing on Internet measurement, interconnection and resilience; <a href=\"https://recruitment.resilious.eu/positions/DC15\">Internet governance (DC15)</a>, applying NLP and computational social science to understand institutional processes and their implications for resilience; and <a href=\"https://recruitment.resilious.eu/positions/DC14\">Economics of Internet standardisation (DC14)</a>, studying competition, innovation and economic incentives in collaboration with <a href=\"https://www.qmul.ac.uk/sef/staff/konstantinoszachariadis.html\">Kostas Zachariadis</a>. The first two positions are in Computer Science, while the third is based in the School of Economics and Finance. All three are part of a European doctoral network offering international research exchanges and collaboration with academic and industry partners. Applications are open to candidates worldwide, subject to MSCA eligibility requirements. The deadline is the end of December 2026. <a href=\"https://recruitment.resilious.eu/\">Full details and applications here</a>.",
+  "status": "live",
+  "slug": "resilious-phd-recruitment-open"
+},
   {
    "date": "2026-11-16",
    "slug": "icwsm-2027-paper",
